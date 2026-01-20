@@ -1,0 +1,787 @@
+--------- beginning of /dev/log/main
+01-01 03:08:08.885 E/Resize  (  118): size for emmc@data is 28859392K.
+01-01 03:08:08.885 E/Resize  (  118): size in superblock is 28858368K.
+01-01 03:08:08.885 E/Resize  (  118): size will (maybe) resize to(after adjust) is 28858368K.
+01-01 03:08:08.885 I/Resize  (  118): The size of data already meet the request(size in superblock = size after adjust).
+01-01 03:08:08.885 I/Resize  (  118): Partition has been resized,so nothing to do!
+--------- beginning of /dev/log/system
+01-01 03:08:09.158 I/sdcard  (  144): starting sdcard service
+01-01 03:08:09.158 I/sdcard  (  144): source_path=/data/media, dest_path='/mnt/shell/emulated', write_gid=1015
+01-01 03:08:09.159 D/wlanLoader(  143): checkSupport 0x6592
+01-01 03:08:09.160 D/ADB_SERVICES(  150): install_listener('tcp:5037','*smartsocket*')
+01-01 03:08:09.163 I/wmt_loader(  141): key:(persist.mtk.wcn.combo.chipid)-value:(0x6592),chipId:0x6592,iRet(6)
+01-01 03:08:09.168 I/sdcard  (  144): [fuse_debug]fuse.free_size =29097435136 
+01-01 03:08:09.176 I/wmt_loader(  141): do kernel module init succeed: 0
+01-01 03:08:09.180 I/installd(  145): installd firing up
+01-01 03:08:09.203 I/6620_launcher(  142): open device node succeed.(Node:/dev/stpwmt, fd:3) 
+01-01 03:08:09.204 I/6620_launcher(  142): key:(persist.mtk.wcn.combo.chipid)-value:(0x6592),chipId:0x6592
+01-01 03:08:09.204 I/6620_launcher(  142): chip id is 0x6592
+01-01 03:08:09.204 I/6620_launcher(  142): chiId:0x6592, setting to property(persist.mtk.wcn.combo.chipid)
+01-01 03:08:09.204 D/ADB_SERVICES(  150): adb_main(): pre init_jdwp()
+01-01 03:08:09.205 I/sdcard  (  144): Failed to symlink: /mnt/shell/emulated/0 -> /storage/emulated/0 ,File exists(17)
+01-01 03:08:09.205 D/ADB_SERVICES(  150): adb_main(): post init_jdwp()
+01-01 03:08:09.205 D/ADB_SERVICES(  150): Event loop starting
+01-01 03:08:09.205 D/ADB_SERVICES(  150): transport: 0x4c728 init'ing for usb_handle 0x4c498 (sn='')
+01-01 03:08:09.205 W/ADB_SERVICES(  150): transport: usb
+01-01 03:08:09.205 D/ADB_SERVICES(  150): transport: (null) registered
+01-01 03:08:09.206 D/ADB_SERVICES(  150): transport: (null) (15,16) starting
+01-01 03:08:09.207 W/ADB_SERVICES(  150): (null): starting transport input thread, reading from fd 16
+01-01 03:08:09.207 E/sdcard  (  144): missing packages.list; retrying
+01-01 03:08:09.208 W/ADB_SERVICES(  150): (null): starting transport output thread on fd 16, SYNC online (2)
+01-01 03:08:09.209 D/ADB_SERVICES(  150): recv: SYNC 00000001 00000002 0000 
+01-01 03:08:09.210 W/ADB_SERVICES(  150): (null): transport SYNC online
+01-01 03:08:09.225 D/NVRAM   (  138): nvram_layout_callback will run!!!
+01-01 03:08:09.225 D/NVRAM   (  138): nvram_platform_log_block: 8
+01-01 03:08:09.225 D/NVRAM   (  138): nvram_platform_resv_block: 8
+01-01 03:08:09.225 D/NVRAM   (  138): nvram_platform_DM_block: 2
+01-01 03:08:09.225 D/NVRAM   (  138): nvram_platform_layout_version: 0
+01-01 03:08:09.225 D/NVRAM   (  138): g_i4CFG_File_Count: 26
+01-01 03:08:09.225 D/NVRAM   (  138): NVM_Init Max Lid: 47
+01-01 03:08:09.225 D/NVRAM   (  138): Total nvram Lid number is 47
+01-01 03:08:09.227 E/ccci_fsd(0)(  136): md_fsd Ver:v2.00, CCCI Ver:1
+01-01 03:08:09.254 D/NVRAM   (  138): Begin excute customer callback!!!
+01-01 03:08:09.254 D/NVRAM   (  138): nvram daemon callback will run!!!
+01-01 03:08:09.254 D/NVRAM   (  138): Callback return 0
+01-01 03:08:09.273 D/NVRAM   (  138): Set property success
+01-01 03:08:09.273 I/6620_launcher(  142): set property(persist.mtk.wcn.combo.chipid) to 0x6592 succeed.
+01-01 03:08:09.273 I/6620_launcher(  142): chipIdProp:key(persist.mtk.wcn.combo.chipid)value(0x6592)
+01-01 03:08:09.273 I/6620_launcher(  142): chiId:0x6592
+01-01 03:08:09.273 I/6620_launcher(  142): run SOC chip flow
+01-01 03:08:09.274 D/NVRAM   (  138): NVRAM AP_CFG_RDCL_FILE_AUXADC_LID:2 
+01-01 03:08:09.274 D/NVRAM   (  138): NVM_GetFileDesc ++
+01-01 03:08:09.274 D/NVRAM   (  138): NVM_GetCfgFileTable : file_lid = 2
+01-01 03:08:09.276 I/wmt_loader(  141): set property(persist.mtk.wcn.combo.chipid) to 0x6592 succeed.
+01-01 03:08:09.276 D/NVRAM   (  138): NVM_GetFileDesc ++
+01-01 03:08:09.276 D/NVRAM   (  138): NVM_GetCfgFileTable done
+01-01 03:08:09.276 D/NVRAM   (  138): Open /data/nvram/APCFG/APRDCL/AUXADC,LID:2
+01-01 03:08:09.276 D/NVRAM   (  138): NVM_GetCfgFileTable : file_lid = 1
+01-01 03:08:09.276 D/NVRAM   (  138): NVM_GetCfgFileTable done
+01-01 03:08:09.276 D/NVRAM   (  138): Open /data/nvram/APCFG/APRDEB/BT_Addr,LID:1
+01-01 03:08:09.277 E/ccci_mdinit(0)(  137): md_init ver:1.10
+01-01 03:08:09.277 I/ccci_mdinit(1)(  137): muxd_name,gsm0710muxd, muxd_service_status,init.svc.gsm0710muxd
+01-01 03:08:09.277 I/ccci_mdinit(1)(  137): rild_name,ril-daemon rild_service_status,init.svc.ril-daemon
+01-01 03:08:09.277 I/ccci_mdinit(1)(  137): mdlogger_name,mdlogger mdlogger_service_status,init.svc.mdlogger
+01-01 03:08:09.277 I/ccci_mdinit(1)(  137): fsd_name,ccci_fsd fsd_service_status,init.svc.ccci_fsd
+01-01 03:08:09.277 D/ccci_mdinit(1)(  137): wait nvram restore completed!
+01-01 03:08:09.277 D/ccci_mdinit(1)(  137): nvram restore ready! 1
+01-01 03:08:09.277 D/ccci_mdinit(1)(  137): boot modem1
+01-01 03:08:09.279 D/NVRAM   (  138): [NVRAM Daemon]wifi lid 30 ++
+01-01 03:08:09.279 D/NVRAM   (  138): NVM_GetFileDesc ++
+01-01 03:08:09.279 D/NVRAM   (  138): touch panel calibration
+01-01 03:08:09.279 D/NVRAM   (  138): NVM_CmpFileVerNo 2  
+01-01 03:08:09.279 D/NVRAM   (  138): NVM_GetCfgFileTable : file_lid = 2
+01-01 03:08:09.279 D/NVRAM   (  138): NVM_CheckVerFile: 0
+01-01 03:08:09.279 D/NVRAM   (  138): NVM_GetCfgFileTable : file_lid = 30
+01-01 03:08:09.279 D/NVRAM   (  138): NVM_GetCfgFileTable done
+01-01 03:08:09.279 D/NVRAM   (  138): Open /data/nvram/APCFG/APRDEB/WIFI,LID:30
+01-01 03:08:09.279 D/NVRAM   (  138): failed to open touchpanel calibration data
+01-01 03:08:09.280 D/NVRAM   (  138): NVM_CmpFileVerNo 30  
+01-01 03:08:09.280 D/NVRAM   (  138): NVM_CmpFileVerNo 1  
+01-01 03:08:09.280 D/NVRAM   (  138): NVM_GetCfgFileTable : file_lid = 1
+01-01 03:08:09.280 D/NVRAM   (  138): NVM_CheckVerFile: 0
+01-01 03:08:09.280 D/NVRAM   (  138): New version info file
+01-01 03:08:09.280 D/NVRAM   (  138): Load File Version: 000, NvRam File Version: 000
+01-01 03:08:09.280 D/NVRAM   (  138): New version info file
+01-01 03:08:09.280 D/NVRAM   (  138): no need to enc/dnc
+01-01 03:08:09.280 D/NVRAM   (  138): Load File Version: 001, NvRam File Version: 001
+01-01 03:08:09.281 D/NVRAM   (  138): no need to enc/dnc
+01-01 03:08:09.281 D/NVRAM   (  138): NVM_GetCfgFileTable : file_lid = 30
+01-01 03:08:09.281 D/NVRAM   (  138): NVM_CheckVerFile: 0
+01-01 03:08:09.281 D/NVRAM   (  138): New version info file
+01-01 03:08:09.281 D/NVRAM   (  138): Load File Version: 001, NvRam File Version: 001
+01-01 03:08:09.281 D/NVRAM   (  138): no need to enc/dnc
+01-01 03:08:09.281 D/NVRAM   (  138): NVM_CheckFileSize : 2 ++
+01-01 03:08:09.281 D/NVRAM   (  138): iCustomBeginLID = 26
+01-01 03:08:09.281 D/NVRAM   (  138): NVM_CheckVerFile: 1
+01-01 03:08:09.281 D/NVRAM   (  138): NVM_CheckFileSize : 1 ++
+01-01 03:08:09.281 D/NVRAM   (  138): iCustomBeginLID = 26
+01-01 03:08:09.281 D/NVRAM   (  138): NVM_GetCfgFileTable : file_lid = 2
+01-01 03:08:09.281 D/NVRAM   (  138): NVM_CheckVerFile: 1
+01-01 03:08:09.281 D/NVRAM   (  138): NVM_GetCfgFileTable : file_lid = 1
+01-01 03:08:09.281 D/NVRAM   (  138): NVM_CheckFileSize : 30 ++
+01-01 03:08:09.281 D/NVRAM   (  138): iCustomBeginLID = 26
+01-01 03:08:09.281 D/NVRAM   (  138): NVM_CheckVerFile: 1
+01-01 03:08:09.281 D/NVRAM   (  138): NVM_CheckFileSize:stat_size:78,size in table:76
+01-01 03:08:09.281 D/NVRAM   (  138): NVM_ProtectUserData
+01-01 03:08:09.281 D/NVRAM   (  138): NVM_ProtectUserData:Check File
+01-01 03:08:09.281 D/NVRAM   (  138): NVM_GetCfgFileTable : file_lid = 30
+01-01 03:08:09.281 D/NVRAM   (  138): NVM_CheckFileSize:stat_size:66,size in table:64
+01-01 03:08:09.281 D/NVRAM   (  138): NVM_ProtectUserData
+01-01 03:08:09.281 D/NVRAM   (  138): NVM_ProtectUserData:Check File
+01-01 03:08:09.281 D/NVRAM   (  138): NVM_CheckFileSize:stat_size:514,size in table:512
+01-01 03:08:09.281 D/NVRAM   (  138): NVM_ProtectUserData
+01-01 03:08:09.281 D/NVRAM   (  138): NVM_ProtectUserData:Check File
+01-01 03:08:09.281 D/NVRAM   (  138): NVM_GetFileDesc ++
+01-01 03:08:09.282 D/NVRAM   (  138): NVM_GetCfgFileTable : file_lid = 12
+01-01 03:08:09.282 D/NVRAM   (  138): NVM_GetCfgFileTable done
+01-01 03:08:09.282 D/NVRAM   (  138): Open /data/nvram/APCFG/APRDCL/HWMON_ACC,LID:12
+01-01 03:08:09.282 D/NVRAM   (  138): NVM_CmpFileVerNo 12  
+01-01 03:08:09.282 D/NVRAM   (  138): NVM_GetCfgFileTable : file_lid = 12
+01-01 03:08:09.282 D/NVRAM   (  138): NVM_CheckVerFile: 0
+01-01 03:08:09.282 D/NVRAM   (  138): New version info file
+01-01 03:08:09.282 D/NVRAM   (  138): NVM_CheckFile: File is correct!
+01-01 03:08:09.282 D/NVRAM   (  138): NVM_ProtectUserData:Check Success
+01-01 03:08:09.282 D/NVRAM   (  138): NVM_CheckFile: File is correct!
+01-01 03:08:09.283 D/NVRAM   (  138): NVM_GetFileDesc ProtectDataFile Check Success!!
+01-01 03:08:09.283 D/NVRAM   (  138): NVM_ProtectUserData:Check Success
+01-01 03:08:09.283 D/NVRAM   (  138): NVM_GetFileDesc ProtectDataFile Check Success!!
+01-01 03:08:09.284 D/NVRAM   (  138): NVM_GetFileDesc --
+01-01 03:08:09.284 D/NVRAM   (  138): NVM_GetFileDesc --
+01-01 03:08:09.284 D/NVRAM   (  138): FD 12 rec_size 64 rec_num 1
+01-01 03:08:09.284 D/NVRAM   (  138): Read NVRAM: [BDAddr 70-77-81-38-30-46][Voice 60 00][Codec 23 10 00 00]               [Radio 07 80 00 06 05 07][Sleep 03 40 1f 40 1f 00 04][BtFTR 80 00]               [TxPWOffset ff ff ff][CoexAdjust 00 00 00 00 00 00]
+01-01 03:08:09.284 D/NVRAM   (  138): NVM_CheckFile: File is correct!
+01-01 03:08:09.284 D/NVRAM   (  138): NVM_ProtectUserData:Check Success
+01-01 03:08:09.284 D/NVRAM   (  138): NVM_GetFileDesc ProtectDataFile Check Success!!
+01-01 03:08:09.282 D/NVRAM   (  138): Load File Version: 000, NvRam File Version: 000
+01-01 03:08:09.284 D/NVRAM   (  138): NVM_GetFileDesc --
+01-01 03:08:09.284 D/NVRAM   (  138): no need to enc/dnc
+01-01 03:08:09.282 D/NVRAM   (  138): NVM_GetFileDesc ++
+01-01 03:08:09.284 D/NVRAM   (  138): NVM_CheckFileSize : 12 ++
+01-01 03:08:09.284 D/NVRAM   (  138): iCustomBeginLID = 26
+01-01 03:08:09.284 D/NVRAM   (  138): NVM_CheckVerFile: 1
+01-01 03:08:09.284 D/NVRAM   (  138): NVM_GetCfgFileTable : file_lid = 12
+01-01 03:08:09.284 D/NVRAM   (  138): NVM_CheckFileSize:stat_size:14,size in table:12
+01-01 03:08:09.284 D/NVRAM   (  138): NVM_ProtectUserData
+01-01 03:08:09.284 D/NVRAM   (  138): NVM_ProtectUserData:Check File
+01-01 03:08:09.284 D/NVRAM   (  138): NVM_GetCfgFileTable : file_lid = 13
+01-01 03:08:09.284 D/NVRAM   (  138): NVM_GetCfgFileTable done
+01-01 03:08:09.284 D/NVRAM   (  138): Open /data/nvram/APCFG/APRDCL/HWMON_GYRO,LID:13
+01-01 03:08:09.285 D/NVRAM   (  138): NVM_CmpFileVerNo 13  
+01-01 03:08:09.285 D/NVRAM   (  138): NVM_GetCfgFileTable : file_lid = 13
+01-01 03:08:09.284 D/NVRAM   (  138): NVM_GetFileDesc ++
+01-01 03:08:09.285 D/NVRAM   (  138): NVM_CheckVerFile: 0
+01-01 03:08:09.285 D/NVRAM   (  138): New version info file
+01-01 03:08:09.285 D/NVRAM   (  138): Load File Version: 000, NvRam File Version: 000
+01-01 03:08:09.285 D/NVRAM   (  138): no need to enc/dnc
+01-01 03:08:09.285 D/NVRAM   (  138): NVM_CheckFileSize : 13 ++
+01-01 03:08:09.285 D/NVRAM   (  138): iCustomBeginLID = 26
+01-01 03:08:09.285 D/NVRAM   (  138): NVM_CheckVerFile: 1
+01-01 03:08:09.285 D/NVRAM   (  138): NVM_GetCfgFileTable : file_lid = 13
+01-01 03:08:09.285 D/NVRAM   (  138): NVM_CheckFileSize:stat_size:14,size in table:12
+01-01 03:08:09.285 D/NVRAM   (  138): NVM_ProtectUserData
+01-01 03:08:09.284 D/NVRAM   (  138): [wifi] wifi FD 11 rec_size 512 rec_num 1
+01-01 03:08:09.285 D/NVRAM   (  138): NVM_ProtectUserData:Check File
+01-01 03:08:09.285 D/NVRAM   (  138): NVM_GetCfgFileTable : file_lid = 19
+01-01 03:08:09.285 D/NVRAM   (  138): [NVRAM Daemon]wifi custom lid 31 ++
+01-01 03:08:09.285 D/NVRAM   (  138): NVM_GetCfgFileTable done
+01-01 03:08:09.285 D/NVRAM   (  138): NVM_GetFileDesc ++
+01-01 03:08:09.285 D/NVRAM   (  138): Open /data/nvram/APCFG/APRDCL/HWMON_PS,LID:19
+01-01 03:08:09.286 D/NVRAM   (  138): NVM_CmpFileVerNo 19  
+01-01 03:08:09.286 D/NVRAM   (  138): NVM_GetCfgFileTable : file_lid = 19
+01-01 03:08:09.286 D/NVRAM   (  138): NVM_GetCfgFileTable : file_lid = 31
+01-01 03:08:09.286 D/NVRAM   (  138): NVM_GetCfgFileTable done
+01-01 03:08:09.286 D/NVRAM   (  138): Open /data/nvram/APCFG/APRDEB/WIFI_CUSTOM,LID:31
+01-01 03:08:09.286 D/NVRAM   (  138): [NVRAM Daemon]product info lid 36 ++
+01-01 03:08:09.286 D/NVRAM   (  138): NVM_CheckVerFile: 0
+01-01 03:08:09.286 D/NVRAM   (  138): NVM_GetFileDesc ++
+01-01 03:08:09.286 D/NVRAM   (  138): New version info file
+01-01 03:08:09.286 D/NVRAM   (  138): Load File Version: 000, NvRam File Version: 000
+01-01 03:08:09.286 D/NVRAM   (  138): no need to enc/dnc
+01-01 03:08:09.286 D/NVRAM   (  138): NVM_CheckFileSize : 19 ++
+01-01 03:08:09.286 D/NVRAM   (  138): iCustomBeginLID = 26
+01-01 03:08:09.286 D/NVRAM   (  138): NVM_CheckVerFile: 1
+01-01 03:08:09.286 D/NVRAM   (  138): NVM_CmpFileVerNo 31  
+01-01 03:08:09.286 D/NVRAM   (  138): NVM_GetCfgFileTable : file_lid = 31
+01-01 03:08:09.286 D/NVRAM   (  138): NVM_GetCfgFileTable : file_lid = 19
+01-01 03:08:09.286 D/NVRAM   (  138): NVM_CheckVerFile: 0
+01-01 03:08:09.286 D/NVRAM   (  138): NVM_CheckFileSize:stat_size:14,size in table:12
+01-01 03:08:09.286 D/NVRAM   (  138): NVM_ProtectUserData
+01-01 03:08:09.286 D/NVRAM   (  138): NVM_GetCfgFileTable : file_lid = 36
+01-01 03:08:09.286 D/NVRAM   (  138): NVM_ProtectUserData:Check File
+01-01 03:08:09.286 D/NVRAM   (  138): NVM_GetCfgFileTable done
+01-01 03:08:09.286 D/NVRAM   (  138): New version info file
+01-01 03:08:09.286 D/NVRAM   (  138): 36 is in new nvram partition!!!
+01-01 03:08:09.286 D/NVRAM   (  138): New NVRAM partition name is /dev/pro_info.
+01-01 03:08:09.287 D/NVRAM   (  138): Load File Version: 000, NvRam File Version: 000
+01-01 03:08:09.287 D/NVRAM   (  138): no need to enc/dnc
+01-01 03:08:09.287 D/NVRAM   (  138): NVM_CheckFileSize : 31 ++
+01-01 03:08:09.287 D/NVRAM   (  138): iCustomBeginLID = 26
+01-01 03:08:09.287 D/NVRAM   (  138): NVM_CheckVerFile: 1
+01-01 03:08:09.287 D/NVRAM   (  138): NVM_GetCfgFileTable : file_lid = 31
+01-01 03:08:09.287 D/NVRAM   (  138): NVM_CheckFileSize:stat_size:6,size in table:4
+01-01 03:08:09.287 D/NVRAM   (  138): NVM_ProtectUserData
+01-01 03:08:09.287 D/NVRAM   (  138): NVM_ProtectUserData:Check File
+01-01 03:08:09.289 D/NVRAM   (  138): [NVRAM Daemon] product info FID 17 rec_size 1024 rec_num 1
+01-01 03:08:09.289 D/NVRAM   (  138): 36 is in new nvram partition!!!
+01-01 03:08:09.294 D/NVRAM   (  138): NVM_CheckFile: File is correct!
+01-01 03:08:09.294 D/NVRAM   (  138): NVM_ProtectUserData:Check Success
+01-01 03:08:09.294 D/NVRAM   (  138): NVM_GetFileDesc ProtectDataFile Check Success!!
+01-01 03:08:09.294 D/NVRAM   (  138): NVM_GetFileDesc --
+01-01 03:08:09.294 D/NVRAM   (  138): NVM_CheckFile: File is correct!
+01-01 03:08:09.294 D/NVRAM   (  138): NVM_ProtectUserData:Check Success
+01-01 03:08:09.294 D/NVRAM   (  138): NVM_GetFileDesc ProtectDataFile Check Success!!
+01-01 03:08:09.294 D/NVRAM   (  138): NVM_CheckFile: File is correct!
+01-01 03:08:09.294 D/NVRAM   (  138): NVM_ProtectUserData:Check Success
+01-01 03:08:09.295 D/NVRAM   (  138): NVM_GetFileDesc ProtectDataFile Check Success!!
+01-01 03:08:09.295 D/NVRAM   (  138): NVM_GetFileDesc --
+01-01 03:08:09.295 D/NVRAM   (  138): NVM_CheckFile: File is correct!
+01-01 03:08:09.295 D/HWMLIB  (  138): [RN]    0.2010    0.2770   -0.4209 =>  1343  1851 -2813
+01-01 03:08:09.295 D/NVRAM   (  138): NVM_ProtectUserData:Check Success
+01-01 03:08:09.295 D/NVRAM   (  138): NVM_GetFileDesc --
+01-01 03:08:09.295 D/NVRAM   (  138): NVM_GetFileDesc ProtectDataFile Check Success!!
+01-01 03:08:09.295 D/HWMLIB  (  138): nvram read: 0, 0, 0 
+01-01 03:08:09.295 D/NVRAM   (  138): NVM_GetFileDesc --
+01-01 03:08:09.295 D/NVRAM   (  138): [wifi] wifi custom FD 14 rec_size 4 rec_num 1
+01-01 03:08:09.295 D/HWMLIB  (  138): [RN]    0.0000    0.0000    0.0000 =>     0     0     0
+01-01 03:08:09.303 D/NVRAM   (  138): no need to enc/dnc
+01-01 03:08:09.303 D/NVRAM   (  138): NVM_CheckFileSize : 2 ++
+01-01 03:08:09.303 D/NVRAM   (  138): NVM_CloseFileDesc: Open by Readonly, no need to check when close
+01-01 03:08:09.303 D/NVRAM   (  138): iCustomBeginLID = 26
+01-01 03:08:09.303 D/NVRAM   (  138): no need to enc/dnc
+01-01 03:08:09.303 D/NVRAM   (  138): NVM_CheckVerFile: 1
+01-01 03:08:09.303 D/NVRAM   (  138): NVM_GetCfgFileTable : file_lid = 2
+01-01 03:08:09.303 D/NVRAM   (  138): NVM_CloseFileDesc: Open by Readonly, no need to check when close
+01-01 03:08:09.303 D/NVRAM   (  138): NVM_CheckFileSize:stat_size:78,size in table:76
+01-01 03:08:09.303 D/NVRAM   (  138): NVM_ProtectUserData
+01-01 03:08:09.303 D/NVRAM   (  138): no need to enc/dnc
+01-01 03:08:09.303 D/NVRAM   (  138): NVM_ProtectUserData:Set Check Num
+01-01 03:08:09.303 D/NVRAM   (  138): NVM_CheckFileSize : 1 ++
+01-01 03:08:09.303 D/NVRAM   (  138): NVM_CloseFileDesc: Open by Readonly, no need to check when close
+01-01 03:08:09.303 D/NVRAM   (  138): iCustomBeginLID = 26
+01-01 03:08:09.303 D/HWMLIB  (  138): [WD]    0.0000    0.0000    0.0000 =>     0     0     0
+01-01 03:08:09.303 D/NVRAM   (  138): NVM_CheckVerFile: 1
+01-01 03:08:09.303 D/NVRAM   (  138): NVM_GetCfgFileTable : file_lid = 1
+01-01 03:08:09.303 D/HWMLIB  (  138): threshold won't set
+01-01 03:08:09.303 D/NVRAM   (  138): write calibration done
+01-01 03:08:09.303 D/NVRAM   (  138): NVM_CheckFileSize:stat_size:66,size in table:64
+01-01 03:08:09.303 D/NVRAM   (  138): NVM_ProtectUserData
+01-01 03:08:09.303 D/NVRAM   (  138): NVM_ProtectUserData:Set Check Num
+01-01 03:08:09.303 D/HWMLIB  (  138): [WD]    0.2010    0.2770   -0.4209 =>   201   277  -421
+01-01 03:08:09.303 D/NVRAM   (  138): NVM_SetCheckNo: CheckNo:2b
+01-01 03:08:09.303 D/NVRAM   (  138): NVM_SetCheckNo: CheckFlag:0
+01-01 03:08:09.303 D/NVRAM   (  138): write gyroscope calibration done
+01-01 03:08:09.304 D/NVRAM   (  138): NVM_SetCheckNo: CheckNo:92
+01-01 03:08:09.304 D/NVRAM   (  138): NVM_SetCheckNo: CheckFlag:0
+01-01 03:08:09.304 D/NVRAM   (  138): write calibration done
+01-01 03:08:09.331 D/NVRAM   (  138): NVM_SetCheckNo: CheckNo generate successfully!
+01-01 03:08:09.331 D/NVRAM   (  138): NVM_SetCheckNo: CheckNo generate successfully!
+01-01 03:08:09.332 D/NVRAM   (  138): NVM_ProtectUserData:Set Check Num Success
+01-01 03:08:09.332 D/NVRAM   (  138): NVM_CloseFileDesc ProtectDataFile Success!!
+01-01 03:08:09.332 D/NVRAM   (  138): no need to enc/dnc
+01-01 03:08:09.332 D/NVRAM   (  138): NVM_ProtectUserData:Set Check Num Success
+01-01 03:08:09.332 D/NVRAM   (  138): NVM_CloseFileDesc ProtectDataFile Success!!
+01-01 03:08:09.332 D/NVRAM   (  138): no need to enc/dnc
+01-01 03:08:09.335 D/NVRAM   (  138): NVRAM daemon sleep !
+01-01 03:08:09.555 I/factory (  140): can't open /dev/tty0: No such file or directory
+01-01 03:08:09.556 D/FTM     (  147): FACTORY_MODE_SUPPORT_RGBA_8888
+01-01 03:08:09.558 D/FTM     (  147): fb->width=1920, fb->height=1200
+01-01 03:08:09.558 D/FTM     (  147): define FACTORY_MODE_SUPPORT_BGRA_8888
+01-01 03:08:09.558 D/FTM     (  147): fb->width=1920, fb->height=1200
+01-01 03:08:09.558 D/FTM     (  147): vi.yres=1200, vi.xres_virtual=1920
+01-01 03:08:09.558 I/factory (  140): framebuffer: fd 3 (1920 x 1200)
+01-01 03:08:09.559 D/FTM     (  147): [MIUI] CUST_LCD_AVAIL_HEIGHT=1200, CUST_LCD_AVAIL_WIDTH=1920
+01-01 03:08:09.559 D/FTM     (  147): [MIUI] CUST_KEY_CONFIRM=116, CUST_KEY_BACK=115
+01-01 03:08:09.559 D/FTM     (  147): [MIUI] TEXT_ROWS=26, TEXT_COLS=63
+01-01 03:08:09.560 D/FTM     (  147): [FTM UTILS] No tool connected!
+01-01 03:08:09.560 D/FTM     (  147): [Batt&Charging] battery_init
+01-01 03:08:09.561 D/FTM     (  147): [ACC] [ACC] gsensor_init
+01-01 03:08:09.561 D/FTM     (  147): [GSC] [GSC] gs_cali_init
+01-01 03:08:09.561 D/FTM     (  147): [IDLE] idle_init
+01-01 03:08:09.561 D/FTM     (  147): [MAG][MAG]msensor_init
+01-01 03:08:09.561 D/FTM     (  147): camera_main_init
+01-01 03:08:09.561 D/FTM     (  147): camera_sub_init
+01-01 03:08:09.561 D/FTM     (  147): strobe_init 274
+01-01 03:08:09.561 D/FTM_AUDIO(  147): [Audio] audio_init
+01-01 03:08:09.561 D/FTM_AUDIO(  147): [Audio] -------Audio_init------------------
+01-01 03:08:09.561 D/FTM     (  147): [Spk] spk_init
+01-01 03:08:09.561 D/FTM     (  147): [Spk] -------Spk_OC_Test_init---------------
+01-01 03:08:09.563 D/FTM     (  147): lcm_init
+01-01 03:08:09.563 D/FTM_HEADSET(  147): [HEADSET] headset_init
+01-01 03:08:09.563 D/FTM_HEADSET(  147): [HEADSET] -------headset_init-----------------
+01-01 03:08:09.563 D/FTM     (  147): [USB] usb_init
+01-01 03:08:09.563 D/FTM     (  147): [OTG] otg_init
+01-01 03:08:09.563 D/FTM     (  147): FT_BT bt_init
+01-01 03:08:09.563 D/NVRAM   (  147): [GPS]   gps_init
+01-01 03:08:09.563 D/FTM     (  147): [SIM] sim_init: Start
+01-01 03:08:09.563 D/FTM     (  147): vibrator_init
+01-01 03:08:09.563 D/FTM     (  147): [FT_WIFI] wifi_init
+01-01 03:08:09.563 D/FTM     (  147): [LPS] [LPS] alsps_init
+01-01 03:08:09.563 D/FTM     (  147): [Gyro][Gyro]gyro_init
+01-01 03:08:09.564 D/FTM     (  147): [GYRO] gyro_cali_init
+01-01 03:08:09.564 D/FTM     (  147): [Signal Test] sigtest_init
+01-01 03:08:09.564 D/FTM     (  147): [Signal Test] ftm_register success!
+01-01 03:08:09.564 D/FTM     (  147): [EMMC] emmc_init
+01-01 03:08:09.565 D/FTM     (  147): [MHL] mhl_init
+01-01 03:08:09.565 D/FTM     (  147): [DIGITIZER] digitizer_init
+01-01 03:08:09.565 D/FTM     (  147): [VNI] vni_init
+01-01 03:08:09.565 D/FTM     (  147): fampstrobe_init 95
+01-01 03:08:09.565 D/FTM     (  147): fampstrobe_init success 108
+01-01 03:08:09.565 D/NVRAM   (  147): ftm_nvram_init
+01-01 03:08:09.565 D/FTM     (  147): [KEYSTR] keystr_init
+01-01 03:08:09.565 D/FTM     (  147): [KEYSTOP] keystop_init
+01-01 03:08:09.565 D/FTM     (  147): [TOUCHKEYLED] tkled_init
+01-01 03:08:09.565 D/FTM     (  147): [SDCARD] sdcard_init
+01-01 03:08:09.565 D/FTM     (  147): [LEDTEST] ledtest_init 166
+01-01 03:08:09.565 D/FTM     (  147): ftm_fastboot_init
+01-01 03:08:09.565 D/NVRAM   (  147): ftm_ui_init
+01-01 03:08:09.565 D/FTM     (  147): [FTM] ftm_set_prop: EXIST(UI.Mode)
+01-01 03:08:09.565 D/FTM     (  147): [KEYTEST] keytest_init
+01-01 03:08:09.565 D/FTM     (  147): [Charging] chgtest_init
+01-01 03:08:09.565 D/NVRAM   (  147): [GPS]   gpstest_init
+01-01 03:08:09.565 D/FTM     (  147): [Touch] tchtest_init
+01-01 03:08:09.565 D/FTM     (  147): [DIGITIZER] digtest_init
+01-01 03:08:09.565 D/FTM     (  147): [WIFI_TEST] wifitest_init
+01-01 03:08:09.565 D/FTM     (  147): [BT_TEST] bttest_init
+01-01 03:08:09.565 D/NVRAM   (  147): [GPS]   gpscmd_init
+01-01 03:08:09.565 D/FTM     (  147): [WIFI_CMD] wificmd_init
+01-01 03:08:09.565 D/FTM     (  147): [BT_CMD] btcmd_init
+01-01 03:08:09.565 D/FTM     (  147): [FTM] initdbfn
+01-01 03:08:09.565 D/FTM     (  147): [Audio] audio_debug_init
+01-01 03:08:09.565 D/FTM     (  147): [Audio] -------Audio_init------------------
+01-01 03:08:09.565 D/FTM     (  147): [FTM] ftm_db_register mod->id=39
+01-01 03:08:09.565 D/FTM     (  147): [FTM] ftm_init end
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] set menuitem[0]: Keys (20)
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] items[0].mode=0
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] set menuitem[1]: Touch Panel (34)
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] items[1].mode=0
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] set menuitem[2]: Touch Panel Auto Test (35)
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] output id=35, val=Touch Panel Auto Test
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] items[2].mode=1
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] set menuitem[3]: Backlight Level (11)
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] items[3].mode=0
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] set menuitem[4]: LCM (12)
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] output id=12, val=LCM
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] items[4].mode=1
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] set menuitem[5]: eMMC (62)
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] output id=62, val=eMMC
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] items[5].mode=1
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] set menuitem[6]: Vibrator (37)
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] items[6].mode=0
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] set menuitem[7]: RTC (10)
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] output id=10, val=RTC
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] items[7].mode=1
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] set menuitem[8]: Loopback-PhoneMic_SpeakerLR (21)
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] output id=21, val=Loopback-PhoneMic_SpeakerLR
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] items[8].mode=1
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] set menuitem[9]: Receiver (38)
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] output id=38, val=Receiver
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] items[9].mode=1
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] set menuitem[10]: WavePlayback (22)
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] items[10].mode=0
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] set menuitem[11]: Speaker OC Test (59)
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] items[11].mode=0
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] set menuitem[12]: Headset (28)
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] items[12].mode=0
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] set menuitem[13]: G-Sensor (24)
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] items[13].mode=0
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] set menuitem[14]: G-Sensor cali (25)
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] items[14].mode=0
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] set menuitem[15]: M-Sensor (26)
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] items[15].mode=0
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] set menuitem[16]: ALS/PS (27)
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] items[16].mode=0
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] set menuitem[17]: Gyroscope (57)
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] items[17].mode=0
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] set menuitem[18]: Gyroscope cali (58)
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] items[18].mode=0
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] set menuitem[19]: Main Camera (0)
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] output id=0, val=Main Camera
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] items[19].mode=1
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] set menuitem[20]: Sub Camera (2)
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] output id=2, val=Sub Camera
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] items[20].mode=1
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] set menuitem[21]: Strobe (3)
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] items[21].mode=0
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] set menuitem[22]: GPS (4)
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] output id=4, val=GPS
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] items[22].mode=1
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] set menuitem[23]: NFC (5)
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] items[23].mode=0
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] set menuitem[24]: Bluetooth (18)
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] output id=18, val=Bluetooth
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] items[24].mode=1
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] set menuitem[25]: Wi-Fi (19)
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] output id=19, val=Wi-Fi
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] items[25].mode=1
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] set menuitem[26]: USB (30)
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] items[26].mode=0
+01-01 03:08:09.567 D/NVRAM   (  147): [MAIN] set menuitem[27]: OTG (31)
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] items[27].mode=0
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] set menuitem[28]: Battery & Charger (33)
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] output id=33, val=Battery & Charger
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] items[28].mode=1
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] set menuitem[29]: Idle Current (41)
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] items[29].mode=0
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] set menuitem[30]: MHL (74)
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] items[30].mode=0
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] set menuitem[31]: DIGITIZER (76)
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] items[31].mode=0
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] set menuitem[32]: VNI (75)
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] items[32].mode=0
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] set menuitem[33]: FAMPSTROBE (77)
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] items[33].mode=0
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] set menuitem[34]: NVRD (78)
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] items[34].mode=0
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] set menuitem[35]: NVWR (79)
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] items[35].mode=0
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] set menuitem[36]: NVBK (80)
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] items[36].mode=0
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] set menuitem[37]: KEYSTR (81)
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] items[37].mode=0
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] set menuitem[38]: KEYSTOP (82)
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] items[38].mode=0
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] set menuitem[39]: TKLED (83)
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] items[39].mode=0
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] set menuitem[40]: SDCARD (84)
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] items[40].mode=0
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] set menuitem[41]: LEDTEST (85)
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] items[41].mode=0
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] set menuitem[42]: UIRES (86)
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] items[42].mode=0
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] set menuitem[43]: KEYTEST (87)
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] items[43].mode=0
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] set menuitem[44]: PWOFF (88)
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] items[44].mode=0
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] set menuitem[45]: CHGTEST (89)
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] items[45].mode=0
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] set menuitem[46]: GPSTEST (90)
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] items[46].mode=0
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] set menuitem[47]: TCHTEST (91)
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] items[47].mode=0
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] set menuitem[48]: DIGTEST (92)
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] items[48].mode=0
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] set menuitem[49]: RESTART (93)
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] items[49].mode=0
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] set menuitem[50]: WIFITEST (94)
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] items[50].mode=0
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] set menuitem[51]: BTTEST (95)
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] items[51].mode=0
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] set menuitem[52]: GPSCMD (96)
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] items[52].mode=0
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] set menuitem[53]: WIFICMD (97)
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] items[53].mode=0
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] set menuitem[54]: BTCMD (98)
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] items[54].mode=0
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] set menuitem[55]: SPKLTEST (99)
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] items[55].mode=0
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] set menuitem[56]: SPKRTEST (100)
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] items[56].mode=0
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] set menuitem[57]: HDSLTEST (101)
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] items[57].mode=0
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] set menuitem[58]: HDSRTEST (102)
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] items[58].mode=0
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] set menuitem[59]: MICTEST (103)
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] items[59].mode=0
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] set menuitem[60]: HSMICTEST (104)
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] items[60].mode=0
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] set menuitem[61]: UIMODE (105)
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] items[61].mode=0
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] set menuitem[62]: UICLR (106)
+01-01 03:08:09.568 D/NVRAM   (  147): [MAIN] items[62].mode=0
+01-01 03:08:09.569 D/NVRAM   (  147): [MAIN] set menuitem[63]: BOOTUI (107)
+01-01 03:08:09.569 D/NVRAM   (  147): [MAIN] items[63].mode=0
+01-01 03:08:09.569 D/NVRAM   (  147): [MAIN] set menuitem[64]: RUNINRES (108)
+01-01 03:08:09.569 D/NVRAM   (  147): [MAIN] items[64].mode=0
+01-01 03:08:09.569 D/NVRAM   (  147): [MAIN] set prop: FMRadio.CH1=885
+01-01 03:08:09.569 D/NVRAM   (  147): [MAIN] set prop: FMRadio.CH2=1058
+01-01 03:08:09.569 D/NVRAM   (  147): [MAIN] set prop: FMRadio.CH3=980
+01-01 03:08:09.569 D/NVRAM   (  147): [MAIN] set prop: FMRadio.CH4=1080
+01-01 03:08:09.569 D/NVRAM   (  147): [MAIN] set prop: FMRadio.RSSITH=-95
+01-01 03:08:09.569 D/NVRAM   (  147): [MAIN] set prop: FMTX.CH1=878
+01-01 03:08:09.569 D/NVRAM   (  147): [MAIN] set prop: FMTX.CH2=886
+01-01 03:08:09.569 D/NVRAM   (  147): [MAIN] set prop: FMTX.CH3=891
+01-01 03:08:09.569 D/NVRAM   (  147): [MAIN] set prop: FMTX.CH4=910
+01-01 03:08:09.569 D/NVRAM   (  147): [MAIN] set prop: FMTX.CH5=920
+01-01 03:08:09.569 D/NVRAM   (  147): [MAIN] set prop: FMTX.CH6=930
+01-01 03:08:09.569 D/NVRAM   (  147): [MAIN] set prop: FMTX.CH7=940
+01-01 03:08:09.569 D/NVRAM   (  147): [MAIN] set prop: FMTX.CH8=990
+01-01 03:08:09.569 D/NVRAM   (  147): [MAIN] set prop: FMTX.CH9=1050
+01-01 03:08:09.569 D/NVRAM   (  147): [MAIN] set prop: FMTX.CH10=1070
+01-01 03:08:09.569 D/NVRAM   (  147): [MAIN] set prop: WIFI.SSID=mtkguest
+01-01 03:08:09.569 D/NVRAM   (  147): [MAIN] set prop: Vibrator_Last_Time=0
+01-01 03:08:09.569 D/NVRAM   (  147): [MAIN] set prop: Audio.Ringtone=5
+01-01 03:08:09.569 D/NVRAM   (  147): [MAIN] set prop: Audio.Receiver=0
+01-01 03:08:09.569 D/NVRAM   (  147): [MAIN] set prop: Freq.Ringtone=1000
+01-01 03:08:09.569 D/NVRAM   (  147): [MAIN] set prop: Audio.Record.Dump=1
+01-01 03:08:09.569 D/NVRAM   (  147): [MAIN] set prop: Lower.Magnitude.Speaker=5
+01-01 03:08:09.569 D/NVRAM   (  147): [MAIN] set prop: Upper.Magnitude.Speaker=1000000000
+01-01 03:08:09.569 D/NVRAM   (  147): [MAIN] set prop: Lower.Magnitude.Receiver=5
+01-01 03:08:09.569 D/NVRAM   (  147): [MAIN] set prop: Upper.Magnitude.Receiver=1000000000
+01-01 03:08:09.569 D/NVRAM   (  147): [MAIN] set prop: Lower.Magnitude.Headset=1000
+01-01 03:08:09.569 D/NVRAM   (  147): [MAIN] set prop: Upper.Magnitude.Headset=1000000000
+01-01 03:08:09.569 D/NVRAM   (  147): [MAIN] set prop: Famp.Strobe.on=1
+01-01 03:08:09.569 D/NVRAM   (  147): [MAIN] set prop: Famp.Camera.auto=1
+01-01 03:08:09.570 D/NVRAM   (  147): [MAIN] Open USB dev/ttyGS0 success.
+01-01 03:08:09.570 D/NVRAM   (  147): [MAIN] Entry get_barcode_from_nvram
+01-01 03:08:09.570 D/NVRAM   (  147): NVM_GetFileDesc ++
+01-01 03:08:09.571 D/NVRAM   (  147): NVM_GetCfgFileTable : file_lid = 36
+01-01 03:08:09.571 D/NVRAM   (  147): NVM_GetCfgFileTable done
+01-01 03:08:09.571 D/NVRAM   (  147): 36 is in new nvram partition!!!
+01-01 03:08:09.571 D/NVRAM   (  147): New NVRAM partition name is /dev/pro_info.
+01-01 03:08:09.573 D/NVRAM   (  147): 36 is in new nvram partition!!!
+01-01 03:08:09.573 D/NVRAM   (  147): The size of barcode_struct:4
+01-01 03:08:09.573 D/NVRAM   (  147): Barcode is FXICB6789012345
+01-01 03:08:09.629 D/NVRAM   (  147): NVM_GetFileDesc ++
+01-01 03:08:09.629 D/NVRAM   (  147): NVM_GetCfgFileTable : file_lid = 46
+01-01 03:08:09.629 D/NVRAM   (  147): NVM_GetCfgFileTable done
+01-01 03:08:09.629 D/NVRAM   (  147): 46 is in new nvram partition!!!
+01-01 03:08:09.629 D/NVRAM   (  147): New NVRAM partition name is /dev/pro_info.
+01-01 03:08:09.632 D/NVRAM   (  147): 46 is in new nvram partition!!!
+01-01 03:08:09.632 D/NVRAM   (  147): famp sn is KMM4DVY
+01-01 03:08:09.659 D/wlanLoader(  143): checkSupport 0x6592
+01-01 03:08:09.667 D/NVRAM   (  147): [TST_DRV]Query USB State OK.
+01-01 03:08:09.767 D/NVRAM   (  147): [TST_DRV]Query USB State OK.
+01-01 03:08:09.869 D/NVRAM   (  147): [TST_DRV]Query USB State OK.
+01-01 03:08:09.911 I/factory (  140): I:Cannot find file 
+01-01 03:08:09.912 I/factory (  140): Pixel format: 1920x1200 @ 32bpp
+01-01 03:08:09.913 I/factory (  140): Pixel format: BGR_565
+01-01 03:08:09.934 I/factory (  140): Not using qualcomm overlay, 'mtkfb'
+01-01 03:08:09.948 I/factory (  140): framebuffer: fd 4 (1920 x 1200)
+01-01 03:08:10.009 I/factory (  140): I:Loading package: TWRP (/res/ui.xml)
+01-01 03:08:10.011 I/factory (  140): I:Loading resources...
+01-01 03:08:10.159 D/wlanLoader(  143): checkSupport 0x6592
+01-01 03:08:10.631 I/factory (  140): I:Loading variables...
+01-01 03:08:10.632 I/factory (  140): I:Loading mouse cursor...
+01-01 03:08:10.632 I/factory (  140): I:Loading pages...
+01-01 03:08:10.633 I/factory (  140): I:Loading page main
+01-01 03:08:10.639 I/ARMAssembler(  190): generated scanline__00000077:03545404_00000A08_00000000 [ 30 ipp] (52 ins) at [0xb0d3b1f0:0xb0d3b2c0] in 165615 ns
+01-01 03:08:10.650 I/ARMAssembler(  190): generated scanline__00000077:03010104_00000A02_00000000 [ 10 ipp] (31 ins) at [0xb0d3b2d0:0xb0d3b34c] in 54770 ns
+01-01 03:08:10.660 D/wlanLoader(  143): checkSupport 0x6592
+01-01 03:08:10.681 I/factory (  140): I:Loading page Main-Cam
+01-01 03:08:10.681 I/factory (  140): I:Loading page Sub-Cam
+01-01 03:08:10.682 I/factory (  140): I:Loading page LCDBlack
+01-01 03:08:10.705 I/factory (  140): I:Loading page LCDWhite
+01-01 03:08:10.724 I/factory (  140): I:Loading page LCDRed
+01-01 03:08:10.743 I/factory (  140): I:Loading page LCDGreen
+01-01 03:08:10.762 I/factory (  140): I:Loading page LCDBlue
+01-01 03:08:10.781 I/factory (  140): I:Loading page LCDColor
+01-01 03:08:10.799 I/factory (  140): I:Loading page resultPass
+01-01 03:08:10.800 I/factory (  140): I:Loading page resultFail
+01-01 03:08:10.804 I/factory (  140): I:Loading page PassOrFail
+01-01 03:08:10.816 I/factory (  140): I:Loading page L-Sensor
+01-01 03:08:10.824 I/factory (  140): I:Loading page G-Sensor
+01-01 03:08:10.832 I/factory (  140): I:Loading page M-Sensor
+01-01 03:08:10.840 I/factory (  140): I:Loading page Gyro
+01-01 03:08:10.848 I/factory (  140): I:Loading page Keys
+01-01 03:08:10.856 I/factory (  140): I:Loading page Speaker L
+01-01 03:08:10.856 I/factory (  140): I:Loading page Speaker R
+01-01 03:08:10.856 I/factory (  140): I:Loading page Microphone
+01-01 03:08:10.857 I/factory (  140): I:Loading page Headset L
+01-01 03:08:10.857 I/factory (  140): I:Loading page Headset R
+01-01 03:08:10.858 I/factory (  140): I:Loading page HeadSet Mic
+01-01 03:08:10.858 I/factory (  140): I:Loading page MHL
+01-01 03:08:10.874 I/factory (  140): I:Loading page Touch
+01-01 03:08:10.874 I/factory (  140): I:Loading page Digitizer
+01-01 03:08:10.875 I/factory (  140): I:Loading page WiFi
+01-01 03:08:10.875 I/factory (  140): I:Loading page BT
+01-01 03:08:10.876 I/factory (  140): I:Loading page NFC
+01-01 03:08:10.884 I/factory (  140): I:Loading page SIM
+01-01 03:08:10.892 I/factory (  140): I:Loading page SD Card
+01-01 03:08:10.900 I/factory (  140): I:Loading page LED
+01-01 03:08:10.915 I/factory (  140): I:Loading page GPS SNR
+01-01 03:08:10.924 I/factory (  140): I:Loading page Charger
+01-01 03:08:10.932 I/factory (  140): I:Loading page Run-In
+01-01 03:08:10.940 I/factory (  140): I:Loading page nofunc
+01-01 03:08:10.940 I/factory (  140): I:Switching packages (TWRP)
+01-01 03:08:10.989 I/factory (  140): I:Set page: 'nofunc'
+01-01 03:08:10.989 I/ARMAssembler(  190): generated scanline__00000077:03545404_00000000_00000000 [ 29 ipp] (43 ins) at [0xb0d3b350:0xb0d3b3fc] in 77923 ns
+01-01 03:08:11.093 D/NVRAM   (  147): [MAIN] after create pthread
+01-01 03:08:11.094 D/NVRAM   (  147): [MAIN] CALL pc_control_mode1
+01-01 03:08:11.094 D/NVRAM   (  147): [MAIN] get_item_list
+01-01 03:08:11.095 D/NVRAM   (  147): [TST_DRV]Query USB State OK.
+01-01 03:08:11.095 I/factory (  140): Standard baud
+01-01 03:08:11.096 I/factory (  140): setting apply done
+01-01 03:08:11.096 D/NVRAM   (  147): [MAIN] Open usb success
+01-01 03:08:11.096 D/NVRAM   (  147): Open usb!
+01-01 03:08:11.096 D/FTM     (  147): Enter read_a_line(): uart = 17
+01-01 03:08:11.096 D/FTM     (  147): [MIUI] itemview_set_items
+01-01 03:08:11.096 D/FTM     (  147): [MIUI] fbview_run 0xb3cc8d18
+01-01 03:08:11.160 D/wlanLoader(  143): checkSupport 0x6592
+01-01 03:08:11.660 D/wlanLoader(  143): checkSupport 0x6592
+01-01 03:08:12.160 D/wlanLoader(  143): checkSupport 0x6592
+01-01 03:08:12.208 E/sdcard  (  144): missing packages.list; retrying
+01-01 03:08:12.661 D/wlanLoader(  143): checkSupport 0x6592
+01-01 03:08:13.161 D/wlanLoader(  143): checkSupport 0x6592
+01-01 03:08:13.661 D/wlanLoader(  143): checkSupport 0x6592
+01-01 03:08:14.161 D/wlanLoader(  143): Get chip Version 0x6592.
+01-01 03:08:14.161 D/wlanLoader(  143): Fail to get the corroct combo chip version
+01-01 03:08:15.208 E/sdcard  (  144): missing packages.list; retrying
+01-01 03:08:15.386 E/ccci_fsd(1)(  136): fail to open /dev/ccci_fs: 2
+01-01 03:08:15.438 E/ccci_mdinit(1)(  137): open /dev/ccci_uem_rx fail: 2
+01-01 03:08:18.208 E/sdcard  (  144): missing packages.list; retrying
+01-01 03:08:19.335 D/NVRAM   (  138): NVRAM daemon sync start !
+01-01 03:08:19.350 D/NVRAM   (  138): NVRAM daemon sync end !
+01-01 03:08:19.350 D/NVRAM   (  138): NVRAM daemon exits !
+01-01 03:08:21.208 E/sdcard  (  144): missing packages.list; retrying
+01-01 03:08:24.209 E/sdcard  (  144): missing packages.list; retrying
+01-01 03:08:27.209 E/sdcard  (  144): missing packages.list; retrying
+01-01 03:08:30.209 E/sdcard  (  144): missing packages.list; retrying
+01-01 03:08:33.209 E/sdcard  (  144): missing packages.list; retrying
+01-01 03:08:36.210 E/sdcard  (  144): missing packages.list; retrying
+01-01 03:08:39.210 E/sdcard  (  144): missing packages.list; retrying
+01-01 03:08:42.210 E/sdcard  (  144): missing packages.list; retrying
+01-01 03:08:45.210 E/sdcard  (  144): missing packages.list; retrying
+01-01 03:08:48.211 E/sdcard  (  144): missing packages.list; retrying
+01-01 03:08:51.211 E/sdcard  (  144): missing packages.list; retrying
+01-01 03:08:54.211 E/sdcard  (  144): missing packages.list; retrying
+01-01 03:08:57.212 E/sdcard  (  144): missing packages.list; retrying
+01-01 03:09:00.212 E/sdcard  (  144): missing packages.list; retrying
+01-01 03:09:03.212 E/sdcard  (  144): missing packages.list; retrying
+01-01 03:09:06.212 E/sdcard  (  144): missing packages.list; retrying
+01-01 03:09:09.213 E/sdcard  (  144): missing packages.list; retrying
+01-01 03:09:12.213 E/sdcard  (  144): missing packages.list; retrying
+01-01 03:09:15.219 E/sdcard  (  144): missing packages.list; retrying
+01-01 03:09:16.193 D/NVRAM   (  147): [MAIN] read from usb is AT+VERSION
+01-01 03:09:16.193 D/NVRAM   (  147): [MAIN] -----------> AT COMMAND = 
+01-01 03:09:16.193 D/NVRAM   (  147): [MAIN] Entry get_barcode_from_nvram
+01-01 03:09:16.193 D/NVRAM   (  147): NVM_GetFileDesc ++
+01-01 03:09:16.194 D/NVRAM   (  147): NVM_GetCfgFileTable : file_lid = 36
+01-01 03:09:16.194 D/NVRAM   (  147): NVM_GetCfgFileTable done
+01-01 03:09:16.194 D/NVRAM   (  147): 36 is in new nvram partition!!!
+01-01 03:09:16.194 D/NVRAM   (  147): New NVRAM partition name is /dev/pro_info.
+01-01 03:09:16.196 D/NVRAM   (  147): 36 is in new nvram partition!!!
+01-01 03:09:16.196 D/NVRAM   (  147): The size of barcode_struct:4
+01-01 03:09:16.196 D/NVRAM   (  147): Barcode is FXICB6789012345
+01-01 03:09:16.197 D/NVRAM   (  147): [MAIN] Entry barcode in wifi only
+01-01 03:09:16.197 E/NVRAM   (  147): after create_verinfo
+01-01 03:09:16.197 E/NVRAM   (  147): g_nr_lines is 10, avail_lines is 20
+01-01 03:09:16.197 E/NVRAM   (  147): vi.m_end is 10
+01-01 03:09:16.208 I/ARMAssembler(  147): generated scanline__00000077:03545405_00000000_00000000 [ 36 ipp] (50 ins) at [0xb3ad91f0:0xb3ad92b8] in 218462 ns
+01-01 03:09:16.422 I/ARMAssembler(  147): generated scanline__00000077:03545405_00000A08_00000000 [ 37 ipp] (59 ins) at [0xb3ad92c0:0xb3ad93ac] in 83846 ns
+01-01 03:09:16.469 E/NVRAM   (  147): Before tear_down
+01-01 03:09:16.469 E/NVRAM   (  147): The version is 
+01-01 03:09:16.470 D/NVRAM   (  147): [MAIN] BOOL IS 0
+01-01 03:09:16.470 D/NVRAM   (  147): [TST_DRV]Query USB State OK.
+01-01 03:09:16.471 D/NVRAM   (  147): [MAIN] Open usb success
+01-01 03:09:16.471 D/NVRAM   (  147): Open usb!
+01-01 03:09:16.471 D/FTM     (  147): Enter read_a_line(): uart = 18
+01-01 03:09:16.471 I/factory (  140): Standard baud
+01-01 03:09:16.471 I/factory (  140): setting apply done
+01-01 03:09:16.714 D/NVRAM   (  147): [MAIN] read from usb is AT+NV.ID=46
+01-01 03:09:16.714 D/NVRAM   (  147): [MAIN] -----------> AT COMMAND = 
+01-01 03:09:16.714 D/NVRAM   (  147): [MAIN] module
+01-01 03:09:16.714 D/NVRAM   (  147): [MAIN] ptr is not null
+01-01 03:09:16.714 D/FTM     (  147): [FTM] ftm_set_prop: EXIST(NV.ID)
+01-01 03:09:16.714 D/NVRAM   (  147): [MAIN] Write test_data in version successfully
+01-01 03:09:16.714 D/NVRAM   (  147): [MAIN] BOOL IS 0
+01-01 03:09:16.715 D/NVRAM   (  147): [TST_DRV]Query USB State OK.
+01-01 03:09:16.715 I/factory (  140): Standard baud
+01-01 03:09:16.716 D/NVRAM   (  147): [MAIN] Open usb success
+01-01 03:09:16.716 D/NVRAM   (  147): Open usb!
+01-01 03:09:16.716 I/factory (  140): setting apply done
+01-01 03:09:16.716 D/FTM     (  147): Enter read_a_line(): uart = 19
+01-01 03:09:16.939 D/NVRAM   (  147): [MAIN] read from usb is AT+NVRD
+01-01 03:09:16.939 D/NVRAM   (  147): [MAIN] -----------> AT COMMAND = 
+01-01 03:09:16.939 D/NVRAM   (  147): [MAIN] module
+01-01 03:09:16.939 D/NVRAM   (  147): [MAIN] ptr is null
+01-01 03:09:16.939 D/NVRAM   (  147): [MAIN] BOOL IS 0
+01-01 03:09:16.939 D/NVRAM   (  147): [MAIN] at command:0, 0x00, 0x00, 0x00, 0x00, 0x71, 0x75, 0x69, 0x74, ,1 
+01-01 03:09:16.939 D/NVRAM   (  147): [MAIN] test item id is 78
+01-01 03:09:16.939 D/NVRAM   (  147): [MAIN] before get_item_name
+01-01 03:09:16.939 D/NVRAM   (  147): [MAIN] after get_item_name is NVRD
+01-01 03:09:16.939 D/NVRAM   (  147): file_lid=46 rec_idx=0
+01-01 03:09:16.939 D/NVRAM   (  147): NVM_GetFileDesc ++
+01-01 03:09:16.940 D/NVRAM   (  147): [TST_DRV]Query USB State OK.
+01-01 03:09:16.940 D/NVRAM   (  147): NVM_GetCfgFileTable : file_lid = 46
+01-01 03:09:16.940 D/NVRAM   (  147): NVM_GetCfgFileTable done
+01-01 03:09:16.940 D/NVRAM   (  147): 46 is in new nvram partition!!!
+01-01 03:09:16.940 D/NVRAM   (  147): New NVRAM partition name is /dev/pro_info.
+01-01 03:09:16.941 I/factory (  140): Standard baud
+01-01 03:09:16.942 I/factory (  140): setting apply done
+01-01 03:09:16.942 D/NVRAM   (  147): [MAIN] Open usb success
+01-01 03:09:16.942 D/NVRAM   (  147): Open usb!
+01-01 03:09:16.942 D/FTM     (  147): Enter read_a_line(): uart = 20
+01-01 03:09:16.943 D/NVRAM   (  147): 46 is in new nvram partition!!!
+01-01 03:09:16.943 D/FTM     (  147): [FTM] ftm_set_prop: EXIST(NV.Type)
+01-01 03:09:16.943 D/FTM     (  147): [FTM] ftm_set_prop: EXIST(NV.ID)
+01-01 03:09:16.943 D/FTM     (  147): [FTM] ftm_set_prop: EXIST(NV.Rec)
+01-01 03:09:16.943 D/FTM     (  147): [FTM] ftm_set_prop: EXIST(NV.Range)
+01-01 03:09:16.943 D/FTM     (  147): [FTM] ftm_set_prop: EXIST(NV.Data)
+01-01 03:09:18.015 D/ADB_SERVICES(  150): adb fdevent_process list (4) (15) 
+01-01 03:09:18.016 D/ADB_SERVICES(  150): recv: CNXN 01000000 00001000 0007 host::
+01-01 03:09:18.016 D/ADB_SERVICES(  150): adb: online
+01-01 03:09:18.016 D/ADB_SERVICES(  150): Calling send_connect 
+01-01 03:09:18.219 E/sdcard  (  144): missing packages.list; retrying
+01-01 03:09:21.043 W/ADB_SERVICES(  150): create_local_service_socket() name=shell:echo 1 > /sys/bus/i2c/devices/0-0038/ftstpauto_clb
+01-01 03:09:21.043 W/ADB_SERVICES(  150): service_to_fd() name=shell:echo 1 > /sys/bus/i2c/devices/0-0038/ftstpauto_clb
+01-01 03:09:21.044 W/ADB_SERVICES(  150): read_meminfo() mem_free=1869776
+01-01 03:09:21.045 W/ADB_SERVICES(  150): create_subprocess() ret_fd=17 pid=198
+01-01 03:09:21.046 W/ADB_SERVICES(  150): LS(1): bound to 'shell:echo 1 > /sys/bus/i2c/devices/0-0038/ftstpauto_clb' via 17
+01-01 03:09:21.047 D/ADB_SERVICES(  150): adb local_socket_ready list (17) 
+01-01 03:09:21.220 E/sdcard  (  144): missing packages.list; retrying
+01-01 03:09:22.424 D/ADB_SERVICES(  150): adb socket read list (17) 
+01-01 03:09:22.424 D/ADB_SERVICES(  150): read_data=0
+01-01 03:09:22.425 D/ADB_SERVICES(  150): max_read_time=0.000074 max_send_time=0.000000 
+01-01 03:09:22.425 D/ADB_SERVICES(  150):  closing because is_eof=1 r=-1 s->fde.force_eof=0
+01-01 03:09:22.425 W/ADB_SERVICES(  150): entered. LS(1) fd=17
+01-01 03:09:24.074 D/ADB_SERVICES(  150): adb fdevent_process list (15) (17) 
+01-01 03:09:24.074 W/ADB_SERVICES(  150): create_local_service_socket() name=shell:cat /sys/bus/i2c/devices/0-0038/ftscheckcalib
+01-01 03:09:24.074 W/ADB_SERVICES(  150): service_to_fd() name=shell:cat /sys/bus/i2c/devices/0-0038/ftscheckcalib
+01-01 03:09:24.075 W/ADB_SERVICES(  150): read_meminfo() mem_free=1869636
+01-01 03:09:24.076 W/ADB_SERVICES(  150): create_subprocess() ret_fd=17 pid=200
+01-01 03:09:24.076 W/ADB_SERVICES(  150): LS(2): bound to 'shell:cat /sys/bus/i2c/devices/0-0038/ftscheckcalib' via 17
+01-01 03:09:24.220 E/sdcard  (  144): missing packages.list; retrying
+01-01 03:09:27.220 E/sdcard  (  144): missing packages.list; retrying
+01-01 03:09:30.220 E/sdcard  (  144): missing packages.list; retrying
+01-01 03:09:33.221 E/sdcard  (  144): missing packages.list; retrying
+01-01 03:09:33.899 D/ADB_SERVICES(  150): adb fdevent_process list (17) 
+01-01 03:09:33.899 D/ADB_SERVICES(  150): adb socket read list (17) 
+01-01 03:09:33.899 D/ADB_SERVICES(  150): read_data=18
+01-01 03:09:33.900 D/ADB_SERVICES(  150): max_read_time=0.000088 max_send_time=0.000089 
+01-01 03:09:33.900 D/ADB_SERVICES(  150):  closing because is_eof=1 r=1 s->fde.force_eof=0
+01-01 03:09:33.900 W/ADB_SERVICES(  150): entered. LS(2) fd=17
+01-01 03:09:34.078 W/ADB_SERVICES(  150): create_local_service_socket() name=shell:echo 82 > /sys/bus/i2c/devices/0-0038/ftstprwreg
+01-01 03:09:34.078 W/ADB_SERVICES(  150): service_to_fd() name=shell:echo 82 > /sys/bus/i2c/devices/0-0038/ftstprwreg
+01-01 03:09:34.079 W/ADB_SERVICES(  150): read_meminfo() mem_free=1869720
+01-01 03:09:34.080 W/ADB_SERVICES(  150): create_subprocess() ret_fd=17 pid=206
+01-01 03:09:34.080 W/ADB_SERVICES(  150): LS(3): bound to 'shell:echo 82 > /sys/bus/i2c/devices/0-0038/ftstprwreg' via 17
+01-01 03:09:34.080 D/ADB_SERVICES(  150): adb local_socket_ready list (17) 
+01-01 03:09:34.088 D/ADB_SERVICES(  150):  closing because is_eof=1 r=-1 s->fde.force_eof=0
+01-01 03:09:34.088 W/ADB_SERVICES(  150): entered. LS(3) fd=17
+01-01 03:09:34.632 W/ADB_SERVICES(  150): create_local_service_socket() name=shell:cat /proc/kmsg lgrep regitster
+01-01 03:09:34.632 W/ADB_SERVICES(  150): service_to_fd() name=shell:cat /proc/kmsg lgrep regitster
+01-01 03:09:34.632 W/ADB_SERVICES(  150): read_meminfo() mem_free=1869416
+01-01 03:09:34.634 W/ADB_SERVICES(  150): create_subprocess() ret_fd=17 pid=207
+01-01 03:09:34.634 W/ADB_SERVICES(  150): LS(4): bound to 'shell:cat /proc/kmsg lgrep regitster' via 17
+01-01 03:09:36.221 E/sdcard  (  144): missing packages.list; retrying
+01-01 03:09:37.927 D/ADB_SERVICES(  150): recv: CNXN 01000000 00001000 0007 host::
+01-01 03:09:37.927 D/ADB_SERVICES(  150): adb: offline
+01-01 03:09:37.927 D/ADB_SERVICES(  150): (null): run_transport_disconnects fd: 16
+01-01 03:09:37.927 W/ADB_SERVICES(  150): entered. LS(4) fd=17
+01-01 03:09:37.928 D/ADB_SERVICES(  150): adb: online
+01-01 03:09:37.928 D/ADB_SERVICES(  150): Calling send_connect 
+01-01 03:09:39.221 E/sdcard  (  144): missing packages.list; retrying
+01-01 03:09:41.919 D/ADB_SERVICES(  150): adb fdevent_process list (15) (17) 
+01-01 03:09:41.919 W/ADB_SERVICES(  150): create_local_service_socket() name=shell:cat /sys/bus/i2c/devices/0-0038/ftscheckcalib
+01-01 03:09:41.919 W/ADB_SERVICES(  150): service_to_fd() name=shell:cat /sys/bus/i2c/devices/0-0038/ftscheckcalib
+01-01 03:09:41.920 W/ADB_SERVICES(  150): read_meminfo() mem_free=1869324
+01-01 03:09:41.921 W/ADB_SERVICES(  150): create_subprocess() ret_fd=17 pid=209
+01-01 03:09:41.921 W/ADB_SERVICES(  150): LS(5): bound to 'shell:cat /sys/bus/i2c/devices/0-0038/ftscheckcalib' via 17
+01-01 03:09:41.921 D/ADB_SERVICES(  150): adb local_socket_ready list (17) 
+01-01 03:09:42.221 E/sdcard  (  144): missing packages.list; retrying
+01-01 03:09:45.222 E/sdcard  (  144): missing packages.list; retrying
+01-01 03:09:48.222 E/sdcard  (  144): missing packages.list; retrying
+01-01 03:09:51.222 E/sdcard  (  144): missing packages.list; retrying
+01-01 03:09:51.705 D/ADB_SERVICES(  150): adb fdevent_process list (17) 
+01-01 03:09:51.705 D/ADB_SERVICES(  150): adb socket read list (17) 
+01-01 03:09:51.705 D/ADB_SERVICES(  150): read_data=235482
+01-01 03:09:51.705 D/ADB_SERVICES(  150): max_read_time=0.013104 max_send_time=0.000914 
+01-01 03:09:51.705 D/ADB_SERVICES(  150):  closing because is_eof=1 r=1 s->fde.force_eof=0
+01-01 03:09:51.705 W/ADB_SERVICES(  150): entered. LS(5) fd=17
+01-01 03:09:51.934 W/ADB_SERVICES(  150): create_local_service_socket() name=sync:
+01-01 03:09:51.934 W/ADB_SERVICES(  150): service_to_fd() name=sync:
+01-01 03:09:51.934 W/ADB_SERVICES(  150): LS(6): bound to 'sync:' via 17
+01-01 03:09:51.935 D/ADB_SERVICES(  150): adb local_socket_ready list (17) 
+01-01 03:09:51.935 D/ADB_SERVICES(  150): adb socket write list (17) 
+01-01 03:09:51.935 D/ADB_SERVICES(  150): write_data=8
+01-01 03:09:51.954 D/ADB_SERVICES(  150):  closing because is_eof=1 r=0 s->fde.force_eof=0
+01-01 03:09:51.954 W/ADB_SERVICES(  150): entered. LS(6) fd=17
+01-01 03:09:54.222 E/sdcard  (  144): missing packages.list; retrying
+01-01 03:09:54.423 W/ADB_SERVICES(  150): create_local_service_socket() name=shell:dmesg
+01-01 03:09:54.423 W/ADB_SERVICES(  150): service_to_fd() name=shell:dmesg
+01-01 03:09:54.424 W/ADB_SERVICES(  150): read_meminfo() mem_free=1869276
+01-01 03:09:54.425 W/ADB_SERVICES(  150): create_subprocess() ret_fd=17 pid=216
+01-01 03:09:54.425 W/ADB_SERVICES(  150): LS(7): bound to 'shell:dmesg' via 17
+01-01 03:09:54.960 D/ADB_SERVICES(  150):  closing because is_eof=1 r=-1 s->fde.force_eof=0
+01-01 03:09:54.960 W/ADB_SERVICES(  150): entered. LS(7) fd=17
+01-01 03:09:56.498 W/ADB_SERVICES(  150): create_local_service_socket() name=shell:export ANDROID_LOG_TAGS="" ; exec logcat -v time
+01-01 03:09:56.498 W/ADB_SERVICES(  150): service_to_fd() name=shell:export ANDROID_LOG_TAGS="" ; exec logcat -v time
+01-01 03:09:56.498 W/ADB_SERVICES(  150): read_meminfo() mem_free=1869276
+01-01 03:09:56.500 W/ADB_SERVICES(  150): create_subprocess() ret_fd=17 pid=218
+01-01 03:09:56.500 W/ADB_SERVICES(  150): LS(8): bound to 'shell:export ANDROID_LOG_TAGS="" ; exec logcat -v time' via 17
+01-01 03:09:56.705 D/ADB_SERVICES(  150): adb fdevent_process list (15) (17) 
+01-01 03:09:56.706 D/ADB_SERVICES(  150): adb socket read list (17) 
+01-01 03:09:56.706 D/ADB_SERVICES(  150): read_data=333503
+01-01 03:09:56.706 D/ADB_SERVICES(  150): max_read_time=0.007944 max_send_time=0.000512 
+01-01 03:09:57.223 E/sdcard  (  144): missing packages.list; retrying
+01-01 03:09:57.230 D/ADB_SERVICES(  150): adb local_socket_ready list (17) 

@@ -1,0 +1,89 @@
+
+
+
+                  MICROTASK SOFTWARE LICENSE AGREEMENT
+
+
+
+     COPYRIGHT NOTICE
+
+        The ColorSPY Software, herein referred to as, the Software
+        or Software, is owned by MicroTask Computer Services,
+        herein referred to as MicroTask.  The Software and its 
+        written literature are protected by all applicable Canadian
+        copyright laws and international treaty provisions. You may
+        not remove the copyright notice from any copy of the Software
+        or any copy of the written materials accompanying the Software.
+
+
+
+     GRANT OF LICENSE
+
+        MicroTask grants to you the right to use the Software
+        for your personal use in conjunction with the following
+        conditions and terms.
+
+        You may not rent, lease, loan or resell the Software.
+        You may not reverse engineer, decompile or disassemble
+        the Software except to the extent that such limitation
+        is expressly prohibited by applicable law.
+
+        This MicroTask License Agreement is your proof of
+        license to exercise the rights granted herein and must
+        be retained and adhered to by you.  Failure to do so
+        will terminate this agreement and revoke your right to
+        use the Software and related materials for any purpose.
+
+                                                              Continued...
+
+
+                  MICROTASK SOFTWARE LICENSE AGREEMENT
+
+
+
+     WARRANTY:
+
+        NO WARRANTY.  Any use by you of this Software is
+        at your own risk.  The Software is provided for use
+        "as is" without warranty of any kind to the maximum
+        extent permitted by law. MicroTask and its suppliers
+        disclaim all warranties of any kind, either express or
+        implied, including, without limitation, implied
+        warranties of merchantability, fitness for a particular
+        purpose and non-infringement. MicroTask is not obligated
+        to provide any updates to the software for any reason.
+
+        Limitation of liability. MicroTask's entire liability
+        and your exclusive remedy under this agreement shall
+        not exceed ten dollars ($10.00 CDN).
+
+
+     NO LIABILITY FOR CONSEQUENTIAL DAMAGES
+
+        To the maximum extent permitted by applicable law, in
+        no event shall MicroTask or its suppliers be liable for
+        any damages whatsoever, including, without limitation,
+        incidental, direct, indirect special and consequential
+        damages, damages for loss of any business profits,
+        business interruption, loss of business information,
+        or other pecuniary loss, arising out of the use or
+        inability to use this MicroTask product, even if
+        MicroTask has been advised of the possibility of such
+        damages.  Because some provinces and countries do not
+        allow the exclusion or limitation of liability for
+        consequential or incidental damages, the above
+        limitation may not apply directly to you.
+
+
+   HOW TO CONTACT MICROTASK
+
+   Should you have any questions concerning the above
+   agreement, or if you desire to contact MicroTask
+   for any reason, please contact MicroTask at:
+
+    MicroTask Computer Services
+    Software Sales and Support
+    8 Faulkner St.
+    Dartmouth, N.S.             Phone: (902) 464-9976
+    Canada  B3A 3A3               Fax: (902) 466-8899
+                               E-mail: microtask@ns.sympatico.ca

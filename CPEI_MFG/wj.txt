@@ -1,0 +1,73 @@
+bool bStatus = false;
+            SetTestMessage("Start Test\r\n");
+            SetTestMessage("Demo Test...\r\n");
+            //Thread.Sleep(3000);
+            string Time_Begin = DateTime.Now.ToString("yyyyMMddHHmm");
+            GetDifTime CountDateTime = new GetDifTime();
+            string str=Convert.ToString(10, 2);
+            bStatus = true;
+            bool bTimeout = true;
+            IntPtr IntPtr_Pass_Panel, IntPtr_Fail_Panel, IntPtr_Abort_Panel, IntPtr_Warming_Panel;
+            AddToTestSummary("DemoTest", "0", "0", "0", bStatus, Convert.ToDouble(this.lb_TestTime.Text.Replace("s","")));
+            //bStatus = false;
+            //檢查客戶程式是否已經打開
+            IntPtr hTemp = new WindowControl().GetMainWindow("TkTopLevel", "MiniUT PCBA ATE");
+            if (hTemp == IntPtr.Zero)
+            {
+                string resetNetwork = ".\\Start_Sigma_Designs_Process.bat";
+                Process.Start(resetNetwork);
+                Thread.Sleep(100);
+            }         
+            else
+             {
+                //new WindowControl().SetWindowNormal(hTemp);
+                new WindowControl().RaiseWindowProcess(hTemp);
+                Thread.Sleep(500);
+                new WindowControl().ClickTarget(stpInfo.Set_Test_Valus_X, stpInfo.Set_Test_Valus_Y);
+                Thread.Sleep(100);
+                new WindowControl().ClickTarget(stpInfo.SN_TextBox_X, stpInfo.SN_TextBox_Y);
+                Thread.Sleep(100);
+                new WindowControl().ClickTarget(stpInfo.SN_TextBox_X, stpInfo.SN_TextBox_Y);
+                Thread.Sleep(100);
+                new WindowControl().Send(curTestInfo.scanPSN);
+             }
+             do
+             {
+                 IntPtr_Pass_Panel = new WindowControl().GetMainWindow("TkTopLevel", "MiniUT PCBA ATE1");
+                 IntPtr_Fail_Panel = new WindowControl().GetMainWindow("TkTopLevel", "MiniUT PCBA ATE2");
+                 IntPtr_Abort_Panel = new WindowControl().GetMainWindow("TkTopLevel", "MiniUT PCBA ATE3");
+                 IntPtr_Warming_Panel = new WindowControl().GetMainWindow("TkTopLevel", "MiniUT PCBA ATE4");
+
+                  if ((IntPtr_Pass_Panel == IntPtr.Zero) && (IntPtr_Fail_Panel == IntPtr.Zero) && (IntPtr_Abort_Panel == IntPtr.Zero) && (IntPtr_Warming_Panel == IntPtr.Zero))
+                  {
+                      Thread.Sleep(300);
+                  }
+                  else
+                  {
+                      if (IntPtr_Pass_Panel != IntPtr.Zero)
+                      {
+                          bStatus = true;
+                          bTimeout = false;
+                          break;
+                      }
+                      if (IntPtr_Fail_Panel != IntPtr.Zero)
+                      {
+                          bStatus = false;
+                          bTimeout = false;
+                          break;
+                      }
+                      if (IntPtr_Abort_Panel != IntPtr.Zero)
+                      {
+                          bStatus = false;
+                          bTimeout = false;
+                          break;
+                      }
+                      else
+                      {
+                          Thread.Sleep(100);
+                      }
+                  }
+
+             } while (CountDateTime.DatetimeCal(Time_Begin, DateTime.Now.ToString("yyyyMMddHHmm")) < 5);
+            
+            return bStatus;
