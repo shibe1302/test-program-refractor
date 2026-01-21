@@ -3500,3 +3500,14 @@ D:\test-program-refractor\CPEI_MFG\bin\Debug\NationalInstruments.Common.dll
 E:\nghien_cuu_FTU\test-program-refractor\CPEI_MFG\bin\Debug\CPEI_MFG.exe.config
 E:\nghien_cuu_FTU\test-program-refractor\CPEI_MFG\obj\x86\Debug\CPEI_MFG.exe
 E:\nghien_cuu_FTU\test-program-refractor\CPEI_MFG\obj\x86\Debug\CPEI_MFG.pdb
+E:\nghien_cuu_FTU\test-program-refractor\CPEI_MFG\bin\Debug\CPEI_MFG.exe
+E:\nghien_cuu_FTU\test-program-refractor\CPEI_MFG\bin\Debug\CPEI_MFG.pdb
+E:\nghien_cuu_FTU\test-program-refractor\CPEI_MFG\bin\Debug\NationalInstruments.Common.dll
+E:\nghien_cuu_FTU\test-program-refractor\CPEI_MFG\obj\x86\Debug\CPEI_MFG.Form1.resources
+E:\nghien_cuu_FTU\test-program-refractor\CPEI_MFG\obj\x86\Debug\FT1_UDR.hmessage2.resources
+E:\nghien_cuu_FTU\test-program-refractor\CPEI_MFG\obj\x86\Debug\CPEI_MFG.hmessage3.resources
+E:\nghien_cuu_FTU\test-program-refractor\CPEI_MFG\obj\x86\Debug\CPEI_MFG.hMessage.resources
+E:\nghien_cuu_FTU\test-program-refractor\CPEI_MFG\obj\x86\Debug\CPEI_MFG.hmessageWorkFind.resources
+E:\nghien_cuu_FTU\test-program-refractor\CPEI_MFG\obj\x86\Debug\CPEI_MFG.MFG_DialogWindow.resources
+E:\nghien_cuu_FTU\test-program-refractor\CPEI_MFG\obj\x86\Debug\CPEI_MFG.Properties.Resources.resources
+E:\nghien_cuu_FTU\test-program-refractor\CPEI_MFG\obj\x86\Debug\CPEI_MFG.csproj.GenerateResource.Cache

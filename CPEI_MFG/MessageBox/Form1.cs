@@ -8,7 +8,7 @@ using System.Net;
 using System.Threading;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
-using AnyConvertx2x;
+
 using System.IO.Ports;
 using System.Net.NetworkInformation;
 using System.Text.RegularExpressions;
@@ -36,9 +36,6 @@ namespace CPEI_MFG
         private EndInfo endInfo = new EndInfo();
         private Etab5Test eTAB5Test = new Etab5Test();
         private NecTest nECTest = new NecTest();
-        
-
-        SocketClient udpClient;
         MFG_DialogWindow DialogWindow = new MFG_DialogWindow();
         CmdMessage m_pAdbCMD;
 
@@ -54,14 +51,8 @@ namespace CPEI_MFG
             );
 
         string csvTile = "", csvText = "";
-        string udpReceData;
+
         int useTimePerItem = 0;
-        public enum PSNType
-        {
-            Unknown = -1,
-            Foxconn = 1,
-            Customer = 2,
-        }
         private void AddCsvContext(string tile, string context)
         {
             if (csvTile.Length != 0)
@@ -140,7 +131,6 @@ namespace CPEI_MFG
         
         private Thread workThread;         //Test Thread 
         bool bSendEMP;
-        int m_bAutoScan;
         public InstrBaseClass mPowersupply_Battery;
         public InstrBaseClass mPowersupply_USB;
         int nFailNum;
@@ -168,20 +158,7 @@ namespace CPEI_MFG
             }
             IniFile ini = new IniFile(settingFile);
             string station = ini.ReadString("MAIN", "Station", "");
-            string caption = null;
-            string fileName = null;
-            //if (station.Equals("PT"))
-            //{
-            //    caption = getCaption(0);
-            //    fileName = getFileName(0);
-            //    openDat(caption, fileName);
-            //}
-            //if (station.Equals("PT2"))
-            //{
-            //    caption = getCaption(1);
-            //    fileName = getFileName(1);
-            //    openDat(caption, fileName);
-            //}
+
 
             Mutex newMutex = new Mutex(true, "Already", out Exist);
             if (!Exist)
@@ -330,7 +307,6 @@ namespace CPEI_MFG
 
             ActiveControl = textBox1;
             pictureBox1.SendToBack();
-            //Process p1 = Process.Start("cmd", "/c net time \\\\10.120.228.106 /set /y");
 
             if (this.stpInfo.AutoScan == 1)
                 this.timer_autoScan.Enabled = true;
@@ -375,68 +351,6 @@ namespace CPEI_MFG
                 else
                     pictureBox1.SendToBack();
             }
-        }
-        private void LoadPicture(string fileName)
-        {
-            string imageFile = fileName;
-            Bitmap bitmap = new Bitmap(imageFile);
-            Point p = new Point(bitmap.Size);
-            if (p.X > pictureBox1.Size.Width || p.Y > pictureBox1.Size.Height)
-            {
-                pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            }
-            else
-            {
-                pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
-            }
-            bitmap.Dispose();
-            pictureBox1.LoadAsync(imageFile);
-            PictureBoxControl(true);
-        }
-        private void openDat(string caption, string fileName)
-        {
-            WindowControl control = new WindowControl();
-            IntPtr hTemp = new WindowControl().GetMainWindow(null, caption);
-            Process pro = new Process();
-            pro.StartInfo.FileName = fileName.ToString();
-            pro.Start();
-            while (hTemp == IntPtr.Zero)
-            {
-                hTemp = new WindowControl().GetMainWindow(null, caption);
-                Thread.Sleep(100);
-            }
-            Thread.Sleep(1000);
-            this.Activate();
-        }
-        private string getCaption(int x)
-        {
-            string caption = null;
-            if (x == 0)
-            {
-                caption = "ZIGPOS ProductionTool v0.1.9";
-            }
-            if (x == 1)
-            {
-                caption = "ZIGPOS ProductionTool v0.1.9";
-            }
-            return caption;
-        }
-        private string getFileName(int y)
-        {
-            string fileName = null;
-            if (y == 0)
-            {
-                fileName = @"E:\Zigpos_code\CPEI_MFG\bin\Debug\0.1.9_EDBG_T7H881.02\productionTool.bat";
-            }
-            if (y == 1)
-            {
-                fileName = @"E:\Zigpos_code\CPEI_MFG\bin\Debug\0.1.9_EDBG_T7H881.02\productionTool.bat";
-            }
-            if (y == 2)
-            {
-                fileName = @"E:\Zigpos_code\CPEI_MFG\bin\Debug\2018-04-16 FunctionalTest v0.1.9 - EDBG - T7H881.02\FunctionTest_v0.1.9\functionTest.bat";
-            }
-            return fileName;
         }
         //-------------------------Read Count.dat and Setup.dat----------------------------------------------------------------
         private void LoadLocalSetting()
@@ -609,84 +523,7 @@ namespace CPEI_MFG
             InitialSFISCom();
             InitialUUTCom();
         }
-        //--------------------------init Nustream----------------------------------------------------------
-        private bool InitNustream()
-        {
-            bool init_status = false;
-            nustreamInfo.HApmpt = new WindowControl().GetMainWindow(null, stpInfo.NustreamWindows);
-            if (nustreamInfo.HApmpt == IntPtr.Zero)
-            {
-                while (true)
-                {
-                    MessageBox.Show("Please open APMPT /APMPT測試程序未正常開啟，請TE檢查是否異常！！！");
-                }
 
-                //init_status = false;
-            }
-            else
-            {
-                //Thread.Sleep(2000);
-                //new WindowControl().SetWindowToTop(hAPMPT);
-                //Thread.Sleep(2000);
-                new WindowControl().SetWindowMaximize(nustreamInfo.HApmpt);
-                Thread.Sleep(2000);
-                new WindowControl().RaiseWindowProcess(nustreamInfo.HApmpt);
-                Thread.Sleep(2000);
-
-                SendKeys.SendWait("%");
-                Thread.Sleep(500);
-                SendKeys.SendWait("F");
-                Thread.Sleep(100);
-                SendKeys.SendWait("L");
-                Thread.Sleep(500);
-                SendKeys.SendWait(stpInfo.ModelFileName);
-                Thread.Sleep(1500);
-                SendKeys.SendWait("{ENTER}");
-                Thread.Sleep(1000);
-                new WindowControl().SetWindowMinimize(nustreamInfo.HApmpt);
-                Thread.Sleep(1000);
-                affichMain();
-                init_status = true;
-
-            }
-            return init_status;
-        }
-        private bool clearNustreamlogs()
-        {
-            bool init_status = true;
-            GetNustreamsInfoMsg();
-            String date = DateTime.Now.ToString("yyyy.MM.dd");
-            string log_Path = nustreamInfo.LogPath + nustreamInfo.ModelName + "\\log\\" + date + "\\";
-            //File.Delete(log_Path);
-            try
-            {
-                if (Directory.Exists(log_Path))
-                {
-
-                    string[] fileList = Directory.GetFiles(log_Path, "*.log");
-                    Thread.Sleep(1500);
-                    if (fileList.Length != 0)
-                    {
-                        foreach (string file in fileList)
-                        {
-                            File.Delete(file);
-                            while (File.Exists(file))
-                            {
-                                File.Delete(file);
-                                MessageBox.Show("clear nustream logs fail");
-                            }
-                        }
-                    }
-                }
-            }
-            catch (System.Exception ex)
-            {
-                SetText(ex.ToString());
-                MessageBox.Show("Can't delete the 600i old logs");
-            }
-
-            return init_status;
-        }
         //--------------------------Write Setup.ini-------------------------------
         private void WriteLocalSetting()
         {
@@ -722,134 +559,7 @@ namespace CPEI_MFG
             ini.WriteString("LC_PARAM", "DConfPathName", stpInfo.DConfPathName);
             ini.WriteString("LC_PARAM", "CConfPathName", stpInfo.CConfPathName);
         }
-        private void LoadEtab5Setting(string file)
-        {
-            IniFile Ini = new IniFile(file);
-            eTAB5Test.FwVersion = Ini.ReadString("ETAB5", "FW_Version", "111");
-            eTAB5Test.FwVersion1 = Ini.ReadString("ETAB5", "FW_Version1", "111");
-            eTAB5Test.DutDesc = Ini.ReadString("ETAB5", "DutDesc", "MTK__");
-            eTAB5Test.DutDriDate = Ini.ReadString("ETAB5", "DriverDate", "");
-            eTAB5Test.DutDriInfo = Ini.ReadString("ETAB5", "DriverInfo", "");
 
-            eTAB5Test.GpibAddrBattery = Ini.ReadInt("GPIB", "Battery", 5);
-            eTAB5Test.GpibAddrUsb = Ini.ReadInt("GPIB", "USB", 6);
-            eTAB5Test.VolBat = float.Parse(Ini.ReadString("GPIB", "Vol_Bat", "3.9"));
-            eTAB5Test.AmpBat = float.Parse(Ini.ReadString("GPIB", "amp_Bat", "2.5"));
-            eTAB5Test.VolUsb = float.Parse(Ini.ReadString("GPIB", "Vol_USB", "5.0"));
-            eTAB5Test.AmpUsb = float.Parse(Ini.ReadString("GPIB", "amp_USB", "2.5"));
-            eTAB5Test.LeakageHighLimit = float.Parse(Ini.ReadString("GPIB", "Leakage_Highlimit", "30.0"));
-            eTAB5Test.LeakageLowLimit = float.Parse(Ini.ReadString("GPIB", "Leakage_Lowlimit", "0.0"));
-            eTAB5Test.ChargeAdapterLowlimit = float.Parse(Ini.ReadString("GPIB", "ChargeAdapter_Lowlimit", "550"));
-            eTAB5Test.ChargeAdapterHighlimit = float.Parse(Ini.ReadString("GPIB", "ChargeAdapter_Highlimit", "1200"));
-            eTAB5Test.ChargeUsbHighlimit = float.Parse(Ini.ReadString("GPIB", "ChargeUSB_Highlimit", "500"));
-            eTAB5Test.ChargeUsbLowlimit = float.Parse(Ini.ReadString("GPIB", "ChargeUSB_Lowlimit", "350"));
-            eTAB5Test.WifiRssiLowlimit = Ini.ReadInt("ETAB5_RF", "WIFI", -50);
-            eTAB5Test.BtRssiLowlimit = Ini.ReadInt("ETAB5_RF", "BT", -70);
-            eTAB5Test.GpsCnLowlimit = Ini.ReadInt("ETAB5_RF", "GPS", 40);
-            eTAB5Test.LowBatVol = Ini.ReadInt("ETAB5_BAT", "LowLimit", 3800);
-            eTAB5Test.HighBatVol = Ini.ReadInt("ETAB5_BAT", "HighLimit", 4200);
-
-            eTAB5Test.KeyLed = Ini.ReadString("ETAB5_LED", "Key_LED", "red");
-
-            eTAB5Test.RunIn = Ini.ReadInt("ETAB5_UI", "RUNIN", 1);
-            eTAB5Test.Display = Ini.ReadInt("ETAB5_UI", "Display", 1);
-            eTAB5Test.Touch = Ini.ReadInt("ETAB5_UI", "Touch", 1);
-            eTAB5Test.Digitizer = Ini.ReadInt("ETAB5_UI", "Digitizer", 1);
-            eTAB5Test.Key = Ini.ReadInt("ETAB5_UI", "Key", 1);
-            eTAB5Test.Led = Ini.ReadInt("ETAB5_UI", "LED", 1);
-            eTAB5Test.Headset = Ini.ReadInt("ETAB5_UI", "HeadSet", 1);
-            eTAB5Test.Gps = Ini.ReadInt("ETAB5_UI", "GPS", 1);
-            eTAB5Test.Wifi = Ini.ReadInt("ETAB5_UI", "WIFI", 1);
-            eTAB5Test.Bt = Ini.ReadInt("ETAB5_UI", "BT", 1);
-            eTAB5Test.Charge = Ini.ReadInt("ETAB5_UI", "Charge", 1);
-            eTAB5Test.Lsensor = Ini.ReadInt("ETAB5_UI", "L-sensor", 1);
-            eTAB5Test.Gsensor = Ini.ReadInt("ETAB5_UI", "G-sensor", 1);
-            eTAB5Test.Msensor = Ini.ReadInt("ETAB5_UI", "M-sensor", 1);
-            eTAB5Test.Gyro = Ini.ReadInt("ETAB5_UI", "Gyro", 1);
-            eTAB5Test.SpeakerL = Ini.ReadInt("ETAB5_UI", "speaker_L", 1);
-            eTAB5Test.SpeakerR = Ini.ReadInt("ETAB5_UI", "speaker_R", 1);
-            eTAB5Test.Microphone = Ini.ReadInt("ETAB5_UI", "Microphone", 1);
-            eTAB5Test.HeadsetL = Ini.ReadInt("ETAB5_UI", "headset_L", 1);
-            eTAB5Test.HeadsetR = Ini.ReadInt("ETAB5_UI", "headset_R", 1);
-            eTAB5Test.HeadsetMic = Ini.ReadInt("ETAB5_UI", "headset_mic", 1);
-            eTAB5Test.MainCamera = Ini.ReadInt("ETAB5_UI", "mainCamera", 1);
-            eTAB5Test.SubCamera = Ini.ReadInt("ETAB5_UI", "subCamera", 1);
-
-
-            eTAB5Test.SpeakerAmpL = Ini.ReadInt("ETAB5_Acoustic", "Speaker_L", 1000000);
-            eTAB5Test.SpeakerAmpR = Ini.ReadInt("ETAB5_Acoustic", "Speaker_R", 1000000);
-            eTAB5Test.SpeakerAmpD = Ini.ReadInt("ETAB5_Acoustic", "Speaker_D", 1000000);
-            eTAB5Test.HeadsetAmpL = Ini.ReadInt("ETAB5_Acoustic", "Headset_L", 1000000);
-            eTAB5Test.HeadsetAmpR = Ini.ReadInt("ETAB5_Acoustic", "Headset_R", 1000000);
-            eTAB5Test.HeadsetAmpD = Ini.ReadInt("ETAB5_Acoustic", "Headset_D", 1000000);
-
-            eTAB5Test.SpeakerLCmd = Ini.ReadString("ETAB5_Acoustic", "Speaker_L_CMD", "");
-            eTAB5Test.SpeakerRCmd = Ini.ReadString("ETAB5_Acoustic", "Speaker_R_CMD", "");
-            eTAB5Test.SpeakerDCmd = Ini.ReadString("ETAB5_Acoustic", "Speaker_D_CMD", "");
-            eTAB5Test.HeadsetLCmd = Ini.ReadString("ETAB5_Acoustic", "Headset_L_CMD", "");
-            eTAB5Test.HeadsetRCmd = Ini.ReadString("ETAB5_Acoustic", "Headset_R_CMD", "");
-            eTAB5Test.HeadsetDCmd = Ini.ReadString("ETAB5_Acoustic", "Headset_D_CMD", "");
-
-            eTAB5Test.SpeakerLFre = Ini.ReadInt("ETAB5_Acoustic", "Speaker_L_Fre", 996);
-            eTAB5Test.SpeakerRFre = Ini.ReadInt("ETAB5_Acoustic", "Speaker_R_Fre", 996);
-            eTAB5Test.SpeakerDFre = Ini.ReadInt("ETAB5_Acoustic", "Speaker_D_Fre", 996);
-            eTAB5Test.HeadsetLFre = Ini.ReadInt("ETAB5_Acoustic", "Headset_L_Fre", 996);
-            eTAB5Test.HeadsetRFre = Ini.ReadInt("ETAB5_Acoustic", "Headset_R_Fre", 996);
-            eTAB5Test.HeadsetDFre = Ini.ReadInt("ETAB5_Acoustic", "Headset_D_Fre", 996);
-
-            stpInfo.AutoClose = Convert.ToBoolean(Ini.ReadInt("ETAB5_Fixcmd", "autoClose", 0));
-            eTAB5Test.NeedFixture = Convert.ToBoolean(Ini.ReadInt("ETAB5_Fixcmd", "NeedFixture", 0));
-            eTAB5Test.AutoUsb = Convert.ToBoolean(Ini.ReadInt("ETAB5_Fixcmd", "AutoUSB", 0));
-            if (eTAB5Test.AutoUsb)
-            {
-                eTAB5Test.UsbDataOpen = Ini.ReadString("ETAB5_Fixcmd", "USB_Data", "relay2");
-                eTAB5Test.UsbDataOpen1 = Ini.ReadString("ETAB5_Fixcmd", "USB_Data1", "relay3");
-            }
-            eTAB5Test.PowerOn = Ini.ReadString("ETAB5_Fixcmd", "PowerOn", "relay1");
-            eTAB5Test.PowerOnReply = Ini.ReadString("ETAB5_Fixcmd", "PowerOn_Reply", "Relay1_ON_OK");
-
-            eTAB5Test.SpeakerOpen = Ini.ReadString("ETAB5_Fixcmd", "SpeakerOpen", "relay4");
-            eTAB5Test.SpeakerOpenReply = Ini.ReadString("ETAB5_Fixcmd", "SpeakerOpen_Reply", "Relay4_ON_OK");
-            eTAB5Test.VolumeUp = Ini.ReadString("ETAB5_Fixcmd", "VolumeUp", "relay2");
-            eTAB5Test.VolumeUpReply = Ini.ReadString("ETAB5_Fixcmd", "VolumeUp_Reply", "Relay2_ON_OK");
-            eTAB5Test.VolumeDown = Ini.ReadString("ETAB5_Fixcmd", "VolumeDown", "relay3");
-            eTAB5Test.VolumeDownReply = Ini.ReadString("ETAB5_Fixcmd", "VolumeDown_Reply", "Relay3_ON_OK");
-            eTAB5Test.UsbOn = Ini.ReadString("ETAB5_Fixcmd", "USB_Data_short", "relay1");
-            eTAB5Test.UsbOnReply = Ini.ReadString("ETAB5_Fixcmd", "USB_Data_short_Reply", "Relay1_ON_OK");
-            eTAB5Test.UsbOffReply = Ini.ReadString("ETAB5_Fixcmd", "USB_OFF_Reply", "Relay1_OFF_OK");
-        }
-        private void LoadLaserSetting(string file)
-        {
-            IniFile ini = new IniFile(file);
-            laserInfo.SetNum = ini.ReadString("LASER", "setNum", "0160");
-            laserInfo.Mode = ini.ReadInt("LASER", "mode", 1);
-            laserInfo.SnNum = ini.ReadInt("LASER", "SN_Num", 2);
-            string comName = ini.ReadString("LASER", "COM", "");
-            if (comName != "")
-            {
-                com_Laser.PortName = comName;
-                com_Laser.Close();
-                com_Laser.BaudRate = 38400;
-                com_Laser.Open();
-            }
-
-
-        }
-        private void LoadNECSetting(string file)
-        {
-            IniFile Ini = new IniFile(file);
-            nECTest.NeedFixture = Convert.ToBoolean(Ini.ReadInt("NEC_Fixcmd", "NeedFixture", 0));
-            nECTest.AutoClose = Convert.ToBoolean(Ini.ReadInt("NEC_Fixcmd", "AutoClose", 0));
-            nECTest.PowerOn = Ini.ReadString("NEC_Fixcmd", "PowerOn", "close");
-            nECTest.PowerOnReply = Ini.ReadString("NEC_Fixcmd", "PowerOn_Reply", "close");
-            nECTest.PowerOff = Ini.ReadString("NEC_Fixcmd", "PowerOff", "open");
-            nECTest.PowerOffReply = Ini.ReadString("NEC_Fixcmd", "PowerOff_Reply", "open");
-            nECTest.ResetOn = Ini.ReadString("NEC_Fixcmd", "ResetOn", "close6");
-            nECTest.ResetOnReply = Ini.ReadString("NEC_Fixcmd", "ResetOn_Reply", "close6");
-            nECTest.ResetOff = Ini.ReadString("NEC_Fixcmd", "ResetOff", "open6");
-            nECTest.ResetOffReply = Ini.ReadString("NEC_Fixcmd", "ResetOff_Reply", "open6");
-            nECTest.AutoLed = Convert.ToBoolean(Ini.ReadInt("NEC_Fixcmd", "AutoLED", 0));
-        }
         private void InitializeFormUI()
         {
             this.label_Model.Text = stpInfo.Model;
@@ -908,26 +618,7 @@ namespace CPEI_MFG
 
             }
         }
-        private bool InitialLedTestCom()
-        {
-            try
-            {
-                if (stpInfo.LedCom.Length != 0)
-                {
-                    Com_LedTest.PortName = stpInfo.LedCom;
-                    Com_LedTest.Close();
-                    Com_LedTest.BaudRate = 9600;
-                    Com_LedTest.Open();
-                }
-            }
-            catch (System.Exception ex)
-            {
-                WriteDebugMessage("Open Com :" + Com_LedTest + "fail");
-                MessageBox.Show(ex.ToString());
-                return false;
-            }
-            return true;
-        }
+
         private void UpdatePassFailNum()
         {
 
@@ -1481,125 +1172,7 @@ namespace CPEI_MFG
                 button1.Enabled = true;
             }
         }
-        private void CsvLogSave(bool bResult)
-        {
-            string destLocalLog = "";
-            string destServerLog = "";
-            string destGoldenServerLog = "";
-            string title = "", content = "";
-            string buff;
 
-            //if (!bResult && endInfo.ErrorCode.Length > 10)
-            if (endInfo.ErrorCode.Length > 10)
-            {
-                endInfo.ErrorCode = "ErrorCode length fail";
-            }
-
-            destLocalLog = string.Format("{0}\\{1}\\{2}\\{3}_{4}.csv", stpInfo.LocalLog, stpInfo.Model, stpInfo.Station, curTestInfo.SfcPsn, DateTime.Now.ToString("yyyyMMdd"));
-            destServerLog = string.Format("{0}\\{1}\\{2}\\{3}_{4}.csv", stpInfo.LocalLog, stpInfo.Model, stpInfo.Station, curTestInfo.SfcPsn, DateTime.Now.ToString("yyyyMMdd"));
-            //save csv 
-            title = string.Format("{0},{1},{2},{3},{4},{5},{6}\n", "SFIS_State", "PC Name", "PSN", "DATE", "Test Result", "Error Code", "Test Time");
-            content = string.Format("{0},{1},{2},{3},{4},{5},{6}", this.rb_SfisON.Checked ? "SFC_ON" : "SFC_OFF", stpInfo.Hostname, curTestInfo.SfcPsn, DateTime.Now.ToString("yyyyMMdd_HHmmss"), bResult ? "PASS" : "FAIL", bResult ? "" : endInfo.ErrorCode.Substring(0, 4), curTestInfo.CycleTime.ToString());
-
-            for (int i = 0; i < curTestInfo.TestItemCsvLogContent.Length; i++)
-            {
-                if (curTestInfo.TestItemCsvLogContent[i] == "")
-                    curTestInfo.TestItemCsvLogContent[i] = "---";
-                content += string.Format(",{0}", curTestInfo.TestItemCsvLogContent[i]);
-            }
-            content += "\n";
-            try
-            {
-                buff = Path.GetDirectoryName(destLocalLog);
-                if (!Directory.Exists(buff))
-                {
-                    Directory.CreateDirectory(buff);
-                }
-                if (!File.Exists(destLocalLog))
-                {
-                    File.AppendAllText(destLocalLog, title);
-                }
-                File.AppendAllText(destLocalLog, content);
-                if (rb_SfisON.Checked)
-                {
-                    buff = Path.GetDirectoryName(destServerLog);
-                    if (!Directory.Exists(buff))
-                    {
-                        Directory.CreateDirectory(buff);
-                    }
-                    if (!File.Exists(destServerLog))
-                    {
-                        File.AppendAllText(destServerLog, title);
-                    }
-                    File.AppendAllText(destServerLog, content);
-                }
-                if (rb_Golden.Checked)
-                {
-                    buff = Path.GetDirectoryName(destGoldenServerLog);
-                    if (!Directory.Exists(buff))
-                    {
-                        Directory.CreateDirectory(buff);
-                    }
-                    if (!File.Exists(destGoldenServerLog))
-                    {
-                        File.AppendAllText(destGoldenServerLog, title);
-                    }
-                    File.AppendAllText(destGoldenServerLog, content);
-                }
-                //curTestInfo.TestCurrent = 0;
-                // curTestInfo.TestVoltage = 0;
-            }
-            catch (System.Exception ex)
-            {
-                SetText(ex.ToString(), 2);
-                return;
-            }
-        }
-        //add in 20160314 For Save TE_LOG
-        private bool TE_LogSave(bool bResult)
-        {
-            string destTxt = "";
-            //if (!bResult && endInfo.ErrorCode.Length > 5)
-            if (endInfo.ErrorCode.Length > 10)
-            {
-                endInfo.ErrorCode = "ErrorCode length fail";
-            }
-            StreamWriter wlog;
-            string StrLogTmp;
-            string strtmp;
-            if (bResult) strtmp = "PASS,";
-            else strtmp = "FAIL, " + endInfo.ErrorCode.Substring(0, 6);
-            StrLogTmp = string.Format("D:\\Log\\Result\\{0}.txt", DateTime.Now.ToString("yyyyMMdd"));
-            string simPage = string.Format("{0},{1},{2},{3},{4} {5}\r\n",
-                                            stpInfo.Model,
-                                            stpInfo.Station,
-                                            curTestInfo.SfcPsn,
-                                            strtmp,
-                                            DateTime.Now.ToString("yyyyMMdd"),
-                                            DateTime.Now.ToString("HH:mm:ss")
-                                          );
-            destTxt = string.Format("{0}", StrLogTmp);
-            try
-            {
-                string buff = Path.GetDirectoryName(destTxt);
-                if (!Directory.Exists(buff))
-                {
-                    Directory.CreateDirectory(buff);
-                }
-            }
-            catch (System.Exception ex)
-            {
-                SetText(ex.ToString());
-                //endInfo.ErrorCode = "SVLOG1 Save Server Log error";
-                //SetText(endInfo.ErrorCode);
-                MessageBox.Show("TE Save Server Log error");
-                return false;
-            }
-            wlog = File.AppendText(StrLogTmp);
-            wlog.Write("{0}", simPage);
-            wlog.Flush();
-            return true;
-        }
         private bool logparth_Golden_Test()
         {
 
@@ -1704,91 +1277,7 @@ namespace CPEI_MFG
             }
             return true;
         }
-        private bool LogSave(bool bResult)
-        {
-            string destTxt = "";
-            if (endInfo.ErrorCode.Length > 10)
-            {
-                endInfo.ErrorCode = "ErrorCode length fail";
-            }
-            //Save Local log
-            string StrLogTmp;
-            string strtmp;
-            if (bResult) strtmp = "PASS";
-            else strtmp = "FAIL_" + endInfo.ErrorCode.Substring(0, 4);
-            if (this.rb_Golden.Checked)
-            {
-                StrLogTmp = string.Format("{0}\\{1}\\{2}\\{3}\\{4}\\{5}_{6}_{7}_{8}.rtf",
-                            stpInfo.Model,
-                            stpInfo.Station,
-                            DateTime.Now.ToString("yyyyMMdd"),
-                            stpInfo.StationNo,
-                            "Golden",
-                            strtmp,
-                            (stpInfo.Station != "FT" ? curTestInfo.DutPsn.Trim().ToUpper() : curTestInfo.DutMac.Trim().ToUpper()),
-                             "Golden",
-                            DateTime.Now.ToString("HHmmss")
-                );
-            }
-            else
-            {
-                StrLogTmp = string.Format("{0}\\{1}\\{2}\\{3}\\{4}_{5}_{6}_{7}.rtf",
-                           //StrLogTmp = string.Format("{0}\\{1}\\{2}\\{3}\\{4}_{5}_{6}_{7}.txt",
-                           stpInfo.Model,
-                           stpInfo.Station,
-                           DateTime.Now.ToString("yyyyMMdd"),
-                           stpInfo.StationNo,
-                           strtmp,
-                           textBox1.Text.Trim().ToUpper(),
-                           this.rb_SfisON.Checked ? "SfcOn" : "SfcOff",
-                           DateTime.Now.ToString("HHmmss")
-               );
-            }
 
-            //-------Save local log--------------------------
-            destTxt = string.Format("{0}\\{1}", stpInfo.LocalLog, StrLogTmp);
-            try
-            {
-
-                string buff = Path.GetDirectoryName(destTxt);
-                if (!Directory.Exists(buff))
-                {
-                    Directory.CreateDirectory(buff);
-                }
-                this.richTextBox1.SaveFile(destTxt);
-            }
-            catch (System.Exception ex)
-            {
-                SetText(ex.ToString());
-                //endInfo.ErrorCode = "SVLOG0 Save Local Log error";
-                //SetText(endInfo.ErrorCode);
-                MessageBox.Show("SVLOG0 Save Local Log error");
-                return false;
-            }
-            // -------- Save Server Log-------------------------------------------
-            if (this.rb_SfisON.Checked || this.rb_Golden.Checked)//change in 20160307 for Save Server Log when SFISOFF
-            {
-                destTxt = string.Format("{0}\\{1}", stpInfo.ServerLog, StrLogTmp);
-                try
-                {
-                    string buff = Path.GetDirectoryName(destTxt);
-                    if (!Directory.Exists(buff))
-                    {
-                        Directory.CreateDirectory(buff);
-                    }
-                    this.richTextBox1.SaveFile(destTxt);
-                }
-                catch (System.Exception ex)
-                {
-                    SetText(ex.ToString());
-                    //endInfo.ErrorCode = "SVLOG1 Save Server Log error";
-                    //SetText(endInfo.ErrorCode);
-                    MessageBox.Show("SVLOG1 Save Server Log error");
-                    return false;
-                }
-            }
-            return true;
-        }
         public delegate void UPDATELISTVIEW(string szTestName, string szValue, string szLow, string szHigh, string szUnit, bool bResult, double nTestTime);
         public UPDATELISTVIEW UpdateListView;
         private void AddToTestSummary(string szTestName, string szValue, string szLow, string szHigh, string szUnit, bool bResult, double nTestTime)
@@ -2089,9 +1578,6 @@ namespace CPEI_MFG
             else
                 return;
         }
-
-
-
         private void SFISMode1(string revcData) //It is the SFISModel1 for ETAB_5
         {
             string szModel, szPSN, szMO;
@@ -2644,19 +2130,7 @@ namespace CPEI_MFG
             curTestInfo.UsbFixRecv += buff;
             SetText("USB Fix Com : " + buff + "\n");
         }
-        public bool WriteUSBFixtureComAndWait(string cmd, int timeout, string exp)
-        {
-            this.curTestInfo.UsbFixRecv = "";
-            com_fixtureUSB.Write(cmd);
-            int nTimeout = timeout * 10;
-            while (nTimeout > 0)
-            {
-                Thread.Sleep(100);
-                if (curTestInfo.UsbFixRecv.Contains(exp)) return true;
-                nTimeout--;
-            }
-            return false;
-        }
+
         private void timer_checkSFC_Tick(object sender, EventArgs e)
         {
             string RevcData = "";
@@ -3747,96 +3221,6 @@ namespace CPEI_MFG
                 Thread.Sleep(500);
             }
             File.Delete(file);
-        }
-        private void deleteFTPLog(String file, String result)//FTP 0731
-        {
-            //MessageBox.Show("1");
-            string strTime_Now = System.DateTime.Now.ToString("yyyy-MM-dd");
-            string strTime_log = System.DateTime.Now.ToString("yyyyMMdd-hhmmss");
-            string strTime_log_fail = System.DateTime.Now.ToString("yyyyMMdd-hhmmss");
-            string saveLog = "";
-            string saveGoldenLog = stpInfo.LocalLog + "\\" + stpInfo.Model + "\\" + stpInfo.StationNo + "\\" + strTime_Now;
-            string settingFile = ".\\Setup.ini";
-            bool bsftp = false;
-            bool bFtpPath = false;
-            bool bDateTemp = false;
-            bool bftp = false;
-            string strFtpPath = null;
-            IniFile ini = new IniFile(settingFile);
-
-            if (this.rb_SfisON.Checked)
-            {
-                saveLog = stpInfo.LocalLog + "\\" + stpInfo.Model + "\\" + stpInfo.StationNo + "\\" + strTime_Now + "\\";
-                if (!Directory.Exists(saveLog))
-                {
-                    Directory.CreateDirectory(saveLog);
-                }
-                Thread.Sleep(500);
-                File.Copy(file, saveLog + "\\" + result + "_" + curTestInfo.ScanMac.ToString() + "_" + stpInfo.Model + "_" + stpInfo.StationNo + "_" + strTime_log_fail + "_" + endInfo.ErrorCode + ".txt");
-            }
-            else
-            {
-                saveLog = stpInfo.LocalLogNoSfc + "\\" + stpInfo.Model + "\\" + stpInfo.StationNo + "\\" + strTime_Now + "\\";
-                if (!Directory.Exists(saveLog))
-                {
-                    Directory.CreateDirectory(saveLog);
-                }
-                Thread.Sleep(500);
-                File.Copy(file, saveLog + "\\" + result + "_" + curTestInfo.ScanMac.ToString() + "_" + stpInfo.Model + "_" + stpInfo.StationNo + "_" + strTime_log_fail + "_" + endInfo.ErrorCode + ".txt");
-            }
-            String newFile = file.Substring(0, file.LastIndexOf("\\") + 1);
-            if (this.rb_SfisON.Checked)
-            {
-                try
-                {
-                    //string destTxt = string.Format("{0}\\{1}\\{2}\\", stpInfo.ServerLog, stpInfo.StationNo, strTime_Now);
-                    //string buff = Path.GetDirectoryName(destTxt);
-                    bDateTemp = ftp.DirectoryExist(stpInfo.Model, stpInfo.StationNo, strTime_Now);
-                    while (bDateTemp == false)
-                    {
-                        bFtpPath = ftp.CreateDir(stpInfo.Model, stpInfo.StationNo, strTime_Now);
-
-                        bDateTemp = ftp.DirectoryExist(stpInfo.Model, stpInfo.StationNo, strTime_Now);
-                    }
-
-                    FileInfo fi = new FileInfo(file);
-                    strFtpPath = stpInfo.Model + "/" + stpInfo.StationNo + "/" + strTime_Now;
-                    if (result == "PASS")
-                    {
-
-                        //File.Copy(file, destTxt + result + "_" + curTestInfo.SfcPsn.Substring(0, 12) + "_" + stpInfo.Model + "_" + stpInfo.StationNo + "_" + strTime_log + "_" + curTestInfo.DutMo + ".txt");
-                        newFile = newFile + result + "_" + curTestInfo.ScanMac.ToString().Substring(0, 12) + "_" + stpInfo.Model + "_" + stpInfo.StationNo + "_" + strTime_log + "_" + curTestInfo.DutMo + ".txt";
-
-                    }
-
-                    if (result == "FAIL")
-                    {
-                        //File.Copy(file, destTxt + result + "_" + curTestInfo.SfcPsn.Substring(0, 12) + "_" + stpInfo.Model + "_" + stpInfo.StationNo + "_" + strTime_log_fail + "_" + curTestInfo.DutMo + "_" + endInfo.ErrorCode + ".txt");
-                        newFile = newFile + result + "_" + curTestInfo.ScanMac.ToString().Substring(0, 12) + "_" + stpInfo.Model + "_" + stpInfo.StationNo + "_" + strTime_log + "_" + curTestInfo.DutMo + "_" + endInfo.ErrorCode + ".txt";
-
-                    }
-                    fi.MoveTo(newFile);
-
-                    bftp = ftp.UploadFile(strFtpPath, newFile);
-                    Thread.Sleep(500);
-                    while (bftp == false)
-                    {
-                        MessageBox.Show("Save the log to server failed,Please check the connnection to the server!");
-                    }
-
-                }
-                catch (Exception ex)
-                {
-                    SetText(ex.ToString());
-                    while (true)
-                    {
-                        MessageBox.Show("Save the log to server failed,Please check the connnection to the server!!");
-                    }
-                }
-            }
-            File.Delete(file);//FTP 0731
-
-
         }
         public void click_FTU_Yes_No_windows(bool result)
         {

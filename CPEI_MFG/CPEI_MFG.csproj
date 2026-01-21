@@ -96,12 +96,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AnyCovertx2x.cs" />
-    <Compile Include="AudioTest.cs" />
     <Compile Include="BaseClass.cs" />
     <Compile Include="CheckCondition.cs" />
     <Compile Include="ClientSocket.cs" />
-    <Compile Include="CmdMessage.cs">
+    <Compile Include="MessageBox\CmdMessage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CORE\Etab5Test.cs" />
@@ -112,45 +110,44 @@
     <Compile Include="CORE\TestInfo.cs" />
     <Compile Include="CORE\TestResult.cs" />
     <Compile Include="DeviceControl.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="MessageBox\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="MessageBox\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="ftp.cs" />
-    <Compile Include="hmessage2.cs">
+    <Compile Include="MessageBox\hmessage2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="hmessage2.Designer.cs">
+    <Compile Include="MessageBox\hmessage2.Designer.cs">
       <DependentUpon>hmessage2.cs</DependentUpon>
     </Compile>
-    <Compile Include="hmessage3.cs">
+    <Compile Include="MessageBox\hmessage3.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="hmessage3.Designer.cs">
+    <Compile Include="MessageBox\hmessage3.Designer.cs">
       <DependentUpon>hmessage3.cs</DependentUpon>
     </Compile>
-    <Compile Include="hMessagee.cs">
+    <Compile Include="MessageBox\hMessagee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="hMessagee.Designer.cs">
+    <Compile Include="MessageBox\hMessagee.Designer.cs">
       <DependentUpon>hMessagee.cs</DependentUpon>
     </Compile>
-    <Compile Include="hmessageWorkFind.cs">
+    <Compile Include="MessageBox\hmessageWorkFind.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="hmessageWorkFind.Designer.cs">
+    <Compile Include="MessageBox\hmessageWorkFind.Designer.cs">
       <DependentUpon>hmessageWorkFind.cs</DependentUpon>
     </Compile>
-    <Compile Include="ImageCompare.cs" />
     <Compile Include="Infrastructure\Win32Api.cs" />
     <Compile Include="IniFile.cs" />
     <Compile Include="InstrBaseClass.cs" />
-    <Compile Include="MFG_DialogWindow.cs">
+    <Compile Include="MessageBox\MFG_DialogWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MFG_DialogWindow.Designer.cs">
+    <Compile Include="MessageBox\MFG_DialogWindow.Designer.cs">
       <DependentUpon>MFG_DialogWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="mt8820_Test.cs" />
@@ -161,23 +158,23 @@
     <Compile Include="SocketServer.cs" />
     <Compile Include="Socket_control.cs" />
     <Compile Include="WindowControl.cs" />
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="MessageBox\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="hmessage2.resx">
+    <EmbeddedResource Include="MessageBox\hmessage2.resx">
       <DependentUpon>hmessage2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="hmessage3.resx">
+    <EmbeddedResource Include="MessageBox\hmessage3.resx">
       <DependentUpon>hmessage3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="hMessagee.resx">
+    <EmbeddedResource Include="MessageBox\hMessagee.resx">
       <DependentUpon>hMessagee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="hmessageWorkFind.resx">
+    <EmbeddedResource Include="MessageBox\hmessageWorkFind.resx">
       <DependentUpon>hmessageWorkFind.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MFG_DialogWindow.resx">
+    <EmbeddedResource Include="MessageBox\MFG_DialogWindow.resx">
       <DependentUpon>MFG_DialogWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

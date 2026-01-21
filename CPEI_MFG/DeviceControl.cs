@@ -10,14 +10,10 @@ namespace CPEI_MFG
 
     class DeviceControl
     {
-      //  FOXCONN_CFT_API int     __stdcall FindDUT(
-      //  const char * szDevDes,
-    //    bool bIfGetDriverInfo,
-   //     char * szDriverVer,
-    //    char * szDriverDate);
+
         [DllImport("CommDLL.dll", CallingConvention = CallingConvention.StdCall,CharSet = CharSet.Ansi,EntryPoint = "FindDUT")]
         private extern static int FindDUT(string szDevDes, bool bIfGetDriverInfo, StringBuilder szDriverVer, StringBuilder szDriverDate);
-       //FOXCONN_CFT_API bool    __stdcall ChangeDeviceState	(const char * szDevDesc, bool bState);
+
 
         [DllImport("CommDLL.dll",CallingConvention = CallingConvention.StdCall,CharSet=CharSet.Ansi, EntryPoint = "ChangeDeviceState")]
         private extern static bool ChangeDeviceState(string szDevDesc, bool bState);
